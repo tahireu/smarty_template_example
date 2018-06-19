@@ -1,0 +1,209 @@
+@import "../../variables";
+
+.com-advocacy .editMode {
+    font-size: 20px;
+    font-weight: normal;
+    background: none;
+    border: 1px dotted $color-error;
+    color: $color-error;
+    padding: 15px;
+    margin: 0 0 20px 0;
+}
+
+
+.com-advocacy .customize h2.main-title {
+    display: none;
+}
+
+.com-advocacy .customize .form {
+    float: left;
+    width: 55%;
+    max-width: 100%;
+    padding-right: 45px;
+}
+
+.com-advocacy .customize .form .input-group {
+    margin-bottom: 30px;
+}
+
+.com-advocacy .customize .form .input-group-firstname,
+.com-advocacy .customize .form .input-group-lastname {
+    float: left;
+    width: 50%;
+    margin-bottom: 8px;
+}
+.com-advocacy .customize .form .input-group-firstname {
+    padding-right: 3px;
+}
+.com-advocacy .customize .form .input-group-lastname {
+    padding-left: 3px;
+}
+
+.com-advocacy .customize .form .input-group .file_browse_wrapper {
+    margin: 30px 0;
+    position: relative;
+}
+.com-advocacy .customize .form .input-group .file_browse_wrapper .upload-button:after {
+    @include tpl-button($color-blue, $size: "small");
+    content: "Choose Photo";
+    float: left;
+    overflow: hidden;
+    direction: ltr !important;
+    margin: 0 12px 12px 0;
+}
+
+
+.com-advocacy .customize .form .input-group .file_browse_wrapper input[type=file] {
+    top: 0;
+    right: 0;
+    padding: 0;
+    font-size: 16px;
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    zoom: 1;
+    @include opacity(0);
+    display: none;
+}
+
+
+.com-advocacy .customize .form .input-group .selected-file {
+    display: inline-block !important;
+    font-size: $font-size;
+    color: $color-gray;
+    padding: 12px 13px;
+}
+
+.com-advocacy .customize .sample_preview {
+    width: 45%;
+    max-width: 100%;
+    background: $color-lightest-gray;
+    @include border-radius($border-radius);
+    padding: 15px 32px;
+}
+.com-advocacy .customize .sample_preview .title {
+        color: $color-white;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 10px 0;
+}
+
+// Purpose of this is to hide second "Sample Campaign" title when there is no image or when
+// image is added in WYSIWYG instead from "browse" button
+.com-advocacy .customize .sample_preview.no_image .title {
+    color: $color-black;
+    font-size: 0;
+    font-weight: 700;
+    margin: 10px 0;
+    &.help-title {
+        font-size: 18px;
+        font-family: $font-family-secondary;
+    }
+    &.help-description {
+        font-weight: unset;
+        span strong {
+            font-family: $font-family-secondary;
+        }
+    }
+}
+
+.com-advocacy .customize .sample_preview .title.help-description {
+    font-size: 20px;
+    font-weight: 300;
+    color: $color-dark;
+    margin-bottom: 20px;
+}
+
+.com-advocacy .customize .sample_preview .image_holder {
+    background: none !important;
+    margin: 15px 0;
+}
+.com-advocacy .customize .sample_preview .image_holder img.sample_preview_image {
+    display: block;
+    max-width: 100%;
+}
+
+.com-advocacy .customize .sample_preview.no_image .image_holder {
+    display: none;
+}
+
+
+.com-advocacy .customize .page-footer {
+    border-top: 1px solid $color-medium-gray;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.com-advocacy .customize .page-footer .rounded-button {
+    @include tpl-button();
+    position: relative;
+    font-size: 0;
+}
+.com-advocacy .customize .page-footer .rounded-button:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-white;
+}
+.com-advocacy .customize .page-footer .rounded-button.saveAdvocacyCampaign {
+    @include tpl-button($color-green, tpl-alt-color-opacity($color-green) );
+    @include border-radius(0);
+    font-size: 0;
+    width: 100%;
+    max-width: 175px;
+}
+.com-advocacy .customize .page-footer .rounded-button.saveAdvocacyCampaign:after {
+    content: "Continue";
+}
+.com-advocacy .customize .page-footer .rounded-button.go-back {
+    @include tpl-button($color-blue, tpl-alt-color-opacity($color-blue) );
+    font-size: 0;
+    margin: 0 10px;
+    width: 100%;
+    max-width: 120px;
+    @include border-radius(0);
+
+    &:after {
+        content: "Go Back";
+        font-family: $font-family;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &:hover:after {
+        color: $color-white;
+    }
+}
+
+
+@media (max-width: 800px){
+    .com-advocacy .customize .form,
+    .com-advocacy .customize .sample_preview {
+        float: none !important;
+        width: 100%;
+        max-width: 455px;
+        margin: 0 auto;
+    }
+    .com-advocacy .customize .form {
+        max-width: 500px;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 450px){
+    .com-advocacy .customize .form .input-group-firstname,
+    .com-advocacy .customize .form .input-group-lastname {
+        float: none;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .com-advocacy .customize .sample_preview {
+        padding: 10px 22px;
+    }
+}

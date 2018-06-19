@@ -1,0 +1,95 @@
+@import "../../variables";
+
+$photo-bank-module-image-size: 275px;
+
+.people-modules-photo-bank-responsive {
+    font-family: $font-family;
+    padding: $default-content-padding $default-content-padding-sides;
+    max-width: 570px;
+    margin: 0 auto;
+    text-align: center;
+
+    .people-modules-photo-bank-responsive-inner {
+
+        .loading-mask {
+            background: rgba(255, 255, 255, 0.9) url("../../../img/ajax-loader.gif") 50% 50% no-repeat;
+        }
+        .loading-mask:after {
+            content: ""; // Overwrites "Loading..." so it doesn't shows up
+        }
+
+        .photo-bank-section {
+            .photo-bank-title {
+                @include tpl-heading(6);
+                padding-left: 0;
+            }
+
+            .no-photos {
+                font-family: $font-family;
+                color: $color-black;
+                font-weight: 400;
+                font-size: 12px;
+                margin: 13px 0 8px;
+            }
+
+            .photo-bank-items {
+                .item {
+                    float: none;
+                    @include inline-block();
+                    margin: 8px;
+
+                    span.delete-button {
+                        @include tpl-close-icon($position: "absolute");
+                        right: 0;
+                        top: 0;
+                        color: $color-black;
+                        background-color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+        }
+
+        .upload-section {
+            float: none;
+            width: 100%;
+            margin: 0;
+
+            .default-photo .current-photo img {
+                width: $photo-bank-module-image-size;
+                height: $photo-bank-module-image-size;
+                @include border-radius(50%);
+            }
+
+
+            .default-photo.default-photo-empty {
+                width: $photo-bank-module-image-size;
+                height: $photo-bank-module-image-size;
+                background: url("../../../img/user.png") 50% 50% no-repeat;
+                background-size: cover;
+                margin: 0 auto;
+
+                .current-photo img {
+                    display: none;
+                }
+            }
+
+            .upload-form .upload-button {
+                @include tpl-button();
+                width: 300px;
+                margin: 20px 0;
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        .people-modules-photo-bank-responsive-inner .upload-section {
+            .default-photo .current-photo img,
+            .default-photo.default-photo-empty {
+                width: $photo-bank-module-image-size*0.75;
+                height: $photo-bank-module-image-size*0.75;
+            }
+            .upload-form .upload-button {
+                width: 100%;
+            }
+        }
+    }
+}

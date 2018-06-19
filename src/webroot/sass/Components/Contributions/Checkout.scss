@@ -1,0 +1,755 @@
+@import "../../variables";
+
+.contributions {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: $font-family-secondary;
+    color: $color;
+
+    //top login text for anonymous users
+    .login-text {
+        font-weight: normal;
+        color: tpl-alt-color-opacity($color-black);
+        line-height: 28px;
+        margin: 0;
+        text-align: center;
+        padding: 20px;
+        font-size: $font-size;
+        a {
+            font-size: $font-size;
+            color: $color-link;
+        }
+    }
+
+    //cart summary
+    #cart-summary-container {
+        .cart-summary-title {
+            @include tpl-heading(2);
+            background: none;
+            text-align: center;
+            border-bottom: 1px solid $color-medium-gray;
+            padding-bottom: 30px;
+        }
+        .cart-summary {
+            background: #fff;
+            padding-top: 30px;
+
+            .summary-row {
+                background: transparent;
+                width: 100%;
+                margin: auto;
+                padding: 0;
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+                border-bottom: solid 1px $color-medium-gray;
+                min-height: 0;
+                img {
+                    display: none;
+                }
+                .top-data {
+                    padding-bottom: 10px;
+                    .name {
+                        @include tpl-heading(6);
+                        width: auto;
+                        max-width: 70%;
+                        text-transform: none;
+                    }
+                    .amount {
+                        @include tpl-heading(6);
+                        width: auto;
+                    }
+                }
+                .bottom-data {
+                    font-weight: 700;
+
+                    .buttons {
+                        line-height: 24px;
+                        float: right;
+                        font-size: 14px;
+                        a {
+                            @include tpl-link;
+                            font-size: 14px;
+                            line-height: 24px;
+                        }
+                        .separator {
+                            line-height: 24px;
+                        }
+                        .separator,
+                        .modify {
+                            .hide-modify-button & {
+                                display: none;
+                            }
+                        }
+                    }
+                    .anonymous {
+                        width: 100%;
+                        float: none;
+                        text-align: left;
+                        padding-bottom: 10px;
+                        font-size: 14px;
+                        line-height: 24px;
+                        span {
+                            display: inline-block;
+                            height: 24px;
+                            line-height: 24px;
+                            font-size: 14px;
+                        }
+                        label {
+                            display: inline-block;
+                            position: relative;
+                            height: 24px;
+                            line-height: 24px;
+                            padding-left: 30px;
+                            font-weight: 700;
+                            input {
+                                display: none;
+                            }
+                            &:before {
+                                font-family: $font-family-icons;
+                                display: block;
+                                width: 22px;
+                                height: 22px;
+                                line-height: 24px;
+                                font-size: 18px;
+                                font-weight: normal;
+                                background: #fff;
+                                border: solid 1px $color-gray;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                content: '';
+                                text-align: center;
+                                color: $color-green;
+                            }
+                            &.checked {
+                                &:before {
+                                    content: '\f00c';
+                                }
+                            }
+                        }
+                    }
+                    .notes {
+                        width: 100%;
+                        float: none;
+                        text-align: left;
+                        padding-left: 0;
+                        line-height: 24px;
+                        a {
+                            @include tpl-link;
+                            font-size: 14px;
+                        }
+
+                        .note-label {
+                            display: none;
+                        }
+                    }
+                }
+
+                .extra-data {
+                    padding: 5px 0 0;
+                    margin: 0;
+                }
+
+                &.extra-data-no .extra-data {
+                    display: none;
+                }
+            }
+            .total {
+                @include tpl-heading(5);
+                background: none;
+                text-align: center;
+                padding: 15px 0;
+
+                .amount {
+                    color: inherit;
+                }
+            }
+        }
+    }
+    .campaign-page-buttons {
+        padding-bottom: 40px;
+        background: #fff;
+        a {
+            margin: 0;
+            padding: 0;
+            @include tpl-button;
+            width: auto;
+            text-decoration: none;
+        }
+    }
+    .forms {
+
+        #contributions-payment-form {
+            .form-body {
+                padding-top: 0 !important;
+                .title-wrapper {
+                    .title {
+                        @include tpl-heading(2);
+                        width: 100%;
+                        text-align: center;
+                        margin: 15px 0 20px;
+                    }
+                    .title-options {
+                        float: none;
+                        text-align: center;
+                        .form-input-wrapper {
+                            display: inline-block;
+
+                            label.form-input-label {
+                                display: inline-block;
+                                padding: 2px 0 0;
+                            }
+                        }
+                    }
+                }
+                .form-panel-recurring,
+                .register-options,
+                .secure-payment,
+                .contributions-transfer-fee-form,
+                .billing-information,
+                .organization-information {
+                    width: 100%;
+                    margin: auto;
+                }
+                .form-input-wrapper {
+                    padding: 6px 0;
+                    text-align: left;
+                    label {
+                        display: none;
+                        color: $color-dark;
+                        font-weight: 700;
+                    }
+                    &.has-buttons {
+                        //text-align: center;
+                    }
+                    .form-input-holder {
+                        label {
+                            @include inline-block;
+                            position: relative;
+                            height: 24px;
+                            line-height: 24px;
+                            padding-left: 35px;
+                            font-weight: 700;
+                            color: $color-dark;
+                            padding-bottom: 0;
+                            padding-top: 0;
+                            &.checkbox input,
+                            &.radio input {
+                                display: none;
+                            }
+                            &:before {
+                                font-family: $font-family-icons;
+                                display: block;
+                                width: 22px;
+                                height: 22px;
+                                line-height: 24px;
+                                font-size: 18px;
+                                font-weight: normal;
+                                background: #fff;
+                                border: solid 1px $color-gray;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                content: '';
+                                text-align: center;
+                                color: $color-green;
+                            }
+                            &.checked:before {
+                                content: '\f00c';
+                            }
+                            &.radio.checked:before {
+                                content: '\f111';
+                                line-height: 22px;
+                                font-size: 14px;
+                            }
+                        }
+                        input[type=text],
+                        input[type=email],
+                        input[type=password],
+                        input[type=number],
+                        input[type=numeric],
+                        input[type=card],
+                        input[type=phone],
+                        textarea,
+                        select {
+                            width: 100%;
+                            outline: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            @include tpl-input-field;
+                        }
+                        select {
+                            line-height: 30px;
+                            background: #fff url("../../../img/drop-down-arrow.png") no-repeat right 12px center !important;
+                            padding-right: 38px;
+                        }
+                        input[type=checkbox],
+                        input[type=radio] {
+                            display: none;
+                        }
+                        .form-input-error {
+                            span {
+                                display: block;
+                                color: $color-error;
+                                padding: 5px 3px 0 2px;
+                            }
+                        }
+                    }
+                    &.is-combo {
+                        .form-input-holder {
+                            position: relative;
+                            input {
+                                background: #fff url("../../../img/drop-down-arrow.png") no-repeat right 12px center !important;
+                                padding-right: 38px;
+                            }
+                            .combo-options {
+                                border: solid 1px #bbbdc0;
+                                border-top: none 0;
+                            }
+                        }
+                    }
+                    &.form-disabled {
+                        opacity: 0.5;
+                    }
+                }
+
+                .currency-options {
+                    padding: 25px 0 45px;
+
+                    .form-input-wrapper.currency-field {
+                        text-align: center;
+                    }
+                }
+
+                .recurring-options {
+                    padding-bottom: 5px;
+                    background: #fff;
+                    .form-input-wrapper {
+                        width: 100%;
+                        margin: auto;
+                        .form-input-holder {
+                            text-align: center;
+                            label {
+                                //display: inline;
+                                color: $color-dark;
+
+                                input {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .form-panel-recurring {
+                        padding-top: 15px;
+
+                        .recurring-type-field {
+                            padding: 5px 0 25px;
+                        }
+
+                        .field-group {
+                            .form-input-wrapper {
+                                padding-left: 0;
+                                padding-right: 0;
+                                float: left;
+                                width: 49%;
+                                &.recurring-start-date-field {
+                                    margin-right: 1%;
+                                }
+                                &.recurring-end-date-field {
+                                    margin-left: 1%;
+                                }
+                                &.recurring-start-date-field,
+                                &.recurring-end-date-field {
+                                    .form-input-holder {
+                                        position: relative;
+                                        &:after {
+                                            position: absolute;
+                                            font-family: $font-family-icons;
+                                            content: "\f073";
+                                            font-size: 16px;
+                                            height: 24px;
+                                            line-height: 24px;
+                                            vertical-align: middle;
+                                            color: $color-medium-gray;
+                                            top: 50%;
+                                            right: 13px;
+                                            margin-top: -12px;
+                                            z-index: 0;
+                                        }
+                                        input {
+                                            z-index: 1;
+                                            position: relative;
+                                            background: transparent;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.single {
+                                .form-input-wrapper {
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                    float: none;
+                                    width: 100%;
+                                    &.recurring-start-date-field {
+                                        margin-right: 0;
+                                    }
+                                    &.recurring-end-date-field {
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .register-options {
+                    .form-panel-register {
+                        .password-strength-info {
+                            display: none;
+                        }
+                        .field-group {
+                            padding-top: 0;
+                            .form-input-wrapper {
+                                padding-left: 0;
+                                padding-right: 0;
+                                float: left;
+                                width: 49%;
+                                &.user-password-field {
+                                    margin-right: 1%;
+                                }
+                                &.user-password-repeat-field {
+                                    margin-left: 1%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .secure-payment {
+                    padding-top: 35px;
+                    .form-panel-existing-cards {
+                        .payment-id-field {
+                            .form-input-holder {
+                                padding-right: 0;
+                                .form-field-button {
+                                    display: inline-block;
+                                    position: static;
+                                    width: auto;
+                                    margin: 5px;
+                                    //color: $color-link;
+                                }
+                            }
+                        }
+                    }
+                    .accepted-cards {
+                        display: none;
+                        padding-top: 10px;
+                        img {
+                            height: 19px;
+                        }
+                    }
+                    .payment-card-expiration-month-field {
+                        width: 50%;
+                        padding-right: 1%;
+                    }
+                    .payment-card-expiration-year-field {
+                        width: 50%;
+                        padding-left: 1%;
+                    }
+                    .payment-card-security-code-field {
+                        width: 100%;
+                        .form-input-holder {
+                            position: relative;
+                            .cvv-help-icon {
+                                top: 17px;
+                                right: 15px;
+                                color: $color-dark;
+                                background: none;
+                                &:before {
+                                    font-style: normal;
+                                    position: absolute;
+                                    font-family: $font-family-icons;
+                                    content: "\f059";
+                                    font-size: 20px;
+                                    height: 16px;
+                                    width: 16px;
+                                    line-height: 16px;
+                                    vertical-align: middle;
+                                    color: $color-medium-gray;
+                                }
+                            }
+                        }
+                    }
+                    .payment-check-account-number-field {
+                        .form-input-holder {
+                            position: relative;
+                            .cvv-help-icon {
+                                top: 17px;
+                                right: 15px;
+                                color: $color-dark;
+                                background: none;
+                                &:before {
+                                    font-style: normal;
+                                    position: absolute;
+                                    font-family: $font-family-icons;
+                                    content: "\f059";
+                                    font-size: 20px;
+                                    height: 16px;
+                                    width: 16px;
+                                    line-height: 16px;
+                                    vertical-align: middle;
+                                    color: $color-medium-gray;
+                                }
+                            }
+                        }
+                    }
+                    .payment-check-routing-number-field {
+                        .form-input-holder {
+                            position: relative;
+                            .cvv-help-icon {
+                                top: 17px;
+                                right: 15px;
+                                color: $color-dark;
+                                background: none;
+                                &:before {
+                                    font-style: normal;
+                                    position: absolute;
+                                    font-family: $font-family-icons;
+                                    content: "\f059";
+                                    font-size: 20px;
+                                    height: 16px;
+                                    width: 16px;
+                                    line-height: 16px;
+                                    vertical-align: middle;
+                                    color: $color-medium-gray;
+                                }
+                            }
+                        }
+                    }
+                    .payment-check-checking-type-field {
+                        width: 50%;
+                        padding-right: 1%;
+                    }
+                    .payment-check-account-type-field {
+                        width: 50%;
+                        padding-left: 1%;
+                    }
+
+                    .payment-type-field {
+                        padding: 15px 0 40px;
+                    }
+                }
+                .contributions-transfer-fee-form {
+                    padding-bottom: 60px;
+                    .form-input-holder {
+                        label {
+                            line-height: normal;
+                            padding-top: 5px;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                // Add New buttons
+
+                .form-panel-existing-cards .payment-id-field,
+                .billing-information .form-panel-saved-addresses .address-id-field,
+                .organization-information .form-panel-organization-selector .group-id-field {
+                    .form-input-holder {
+                        padding-right: 0;
+
+                        .form-field-button {
+                            @include inline-block;
+                            position: static;
+                            width: auto;
+                            float: right;
+                            font-weight: 700;
+                            margin: 8px 5px 15px;
+                            color: $color-green;
+                        }
+                    }
+                }
+
+                .billing-information {
+                    padding-top: 30px;
+                    .person-firstname-field {
+                        width: 50%;
+                        padding-right: 1%;
+                    }
+                    .person-lastname-field {
+                        width: 50%;
+                        padding-left: 1%;
+                    }
+                    .phone-number-field {
+                        width: 50%;
+                        padding-right: 1%;
+                    }
+                    .phone-is-outside-us-field {
+                        width: 50%;
+                        padding-left: 1%;
+                        padding-top: 20px;
+                    }
+                }
+                .organization-information {
+                    padding-top: 25px;
+                    .title {
+                        padding-top: 40px;
+                    }
+                    .group-yes-field {
+                        .form-input-holder {
+                            text-align: center;
+
+                            label {
+                                //display: inline;
+                            }
+                        }
+                    }
+                    .form-panel-organization-selector .group-id-field {
+                        padding-top: 20px;
+                    }
+                    .group-phone-number-field {
+                        width: 50%;
+                        padding-right: 1%;
+                    }
+                    .group-phone-is-outside-us-field {
+                        width: 50%;
+                        padding-left: 1%;
+                        padding-top: 20px;
+                    }
+                }
+            }
+        }
+        .form-validation-errors {
+            width: 100%;
+            margin: auto;
+            padding-top: 30px;
+            span {
+                color: $color-error;
+            }
+        }
+        .form-actions {
+            text-align: center;
+            padding-top: 25px;
+            input {
+                @include tpl-button;
+                min-width: 250px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 560px) {
+    .contributions .cart-summary .summary-row .bottom-data .buttons,
+    .contributions .cart-summary .summary-row .bottom-data .notes {
+        float: none;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 450px) {
+    .contributions .cart-summary .summary-row .top-data .name {
+        padding: 0 15px 4px 0;
+    }
+    .contributions .cart-summary .summary-row .bottom-data .anonymous {
+        float: none;
+        padding-top: 2px;
+    }
+    .contributions .cart-summary .summary-row .bottom-data .anonymous span {
+        display: block;
+        padding-bottom: 4px;
+    }
+    .contributions .cart-summary .summary-row .bottom-data .notes {
+        float: none;
+        padding: 2px 0 0 0;
+    }
+    .contributions .cart-summary .summary-row .bottom-data .notes .instructions {
+        padding-right: 15px;
+    }
+
+    .contributions .form-body .title-wrapper .title-options .form-input-wrapper .form-input-label {
+        display: block;
+        width: 100%;
+        font-size: 21px;
+        padding-bottom: 10px;
+    }
+    .contributions .form-body .title-wrapper .title-options .form-input-wrapper .form-input-holder {
+        float: none;
+    }
+    .contributions .form-body .title-wrapper .title-options .form-input-wrapper .form-input-holder .radio {
+        margin-left: 0;
+        margin-right: 14px;
+    }
+
+    /* Recurring dates */
+    .contributions .forms #contributions-payment-form .form-body .recurring-options .form-panel-recurring .field-group .form-input-wrapper.recurring-start-date-field,
+    .contributions .forms #contributions-payment-form .form-body .recurring-options .form-panel-recurring .field-group .form-input-wrapper.recurring-end-date-field,
+    .contributions .forms #contributions-payment-form .form-body .register-options .form-panel-register .field-group .form-input-wrapper.user-password-field,
+    .contributions .forms #contributions-payment-form .form-body .register-options .form-panel-register .field-group .form-input-wrapper.user-password-repeat-field {
+        float: none;
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Card and Check info */
+    .contributions .forms #contributions-payment-form .form-body .secure-payment .payment-card-expiration-month-field,
+    .contributions .forms #contributions-payment-form .form-body .secure-payment .payment-card-expiration-year-field,
+    //.payment-processors .forms .field-group .form-input-wrapper.payment-card-expiration-month-field,
+    //.payment-processors .form-body .field-group .form-input-wrapper.payment-card-expiration-year-field,
+    //.payment-processors .forms .field-group .form-input-wrapper.payment-card-expiration-year-field,
+
+    .contributions .forms #contributions-payment-form .form-body .secure-payment .payment-check-checking-type-field,
+    .contributions .forms #contributions-payment-form .form-body .secure-payment .payment-check-account-type-field
+    //.payment-processors .form-body .field-group .form-input-wrapper.payment-check-checking-type-field,
+    //.payment-processors .form-body .field-group .form-input-wrapper.payment-check-account-type-field
+    {
+        float: none;
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Person info (Name) */
+    .contributions .forms #contributions-payment-form .form-body .billing-information .person-firstname-field,
+    .contributions .forms #contributions-payment-form .form-body .billing-information .person-lastname-field {
+        float: none;
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+    /* Phone info (in Organization and Billing Information) */
+    .contributions .forms #contributions-payment-form .form-body .billing-information .phone-number-field,
+    .contributions .forms #contributions-payment-form .form-body .organization-information .group-phone-number-field {
+        width: 100%;
+        padding-right: 0;
+    }
+    .contributions .form-body .organization-information .form-panel-organization .inputs-wrapper .group-phone-is-outside-us-field,
+    .contributions .forms #contributions-payment-form .form-body .organization-information .group-phone-number-field,
+    .contributions .form-body .field-group .form-input-wrapper.phone-is-outside-us-field,
+    .contributions .forms #contributions-payment-form .form-body .organization-information .group-phone-is-outside-us-field {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .contributions .forms #contributions-payment-form .form-body .organization-information .group-phone-is-outside-us-field {
+        padding-top: 0;
+    }
+
+    .contributions .form-body .accepted-cards {
+        display: none;
+    }
+
+
+    .contributions .forms #contributions-payment-form .form-body .title-wrapper .title-options .form-input-wrapper label.form-input-label {
+        display: none;
+    }
+}

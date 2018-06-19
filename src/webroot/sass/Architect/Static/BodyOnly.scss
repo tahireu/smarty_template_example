@@ -1,0 +1,24 @@
+@import "../../variables";
+
+.tpl-architect-static-body-only {
+    padding: $default-content-padding $default-content-padding-sides;
+
+    // When published in User Drop Content position
+    .tpl-position-user-drop-content & {
+        color: $color-black;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    // When published in Footer position
+    .tpl-position-footer & {
+        @include tpl-small-text;
+        color: $color-white;
+        font-weight: 300;
+        text-align: center;
+        line-height: 20px;
+        padding: 10px $default-content-padding-sides;
+    }
+}

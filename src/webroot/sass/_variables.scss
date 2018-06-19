@@ -1,0 +1,636 @@
+@import "compass/css3";
+
+
+@function tpl-alt-color-opacity($color, $opacity: .7){
+    @return rgba($color, $opacity);
+}
+
+$default-content-padding: 20px;
+$default-content-padding-sides: 10px;
+
+$break-tablet: 900px;
+$break-mobile: 700px;
+
+$header-height: 90px;
+$header-height-small: 50px;
+$header-height-mobile: 105px;
+$flyout-width: 255px;
+$flyout-width-small: 220px;
+$hero-height: 300px;
+$hero-height-big: 450px;
+
+$summaries-spacing: 6px;
+
+$font-family: "myriad-pro", sans-serif;
+$font-family-secondary: "leelawadeeregular", sans-serif;
+$font-family-icons: "FontAwesome";
+$font-family-icons-secondary: "Linearicons";
+$base-color : #fff;
+$font-size: 16px;
+
+
+$color-purple: #792468;
+$color-red: #993333;
+$color-orange: #b44726;
+$color-red-9d: #9d6f68;
+$color-gold: #bd952e;
+$color-taupe: #796d4e;
+$color-green: #339933;
+$color-sky-blue: #009FCA;
+$color-blue: #006699;
+$color-dark-blue: #00547F;
+$color-blue-7e: #7eb8d5;
+$color-teal: #4c8d85;
+$color-light-blue: #7ca6c8;
+$color-aqua: #92c5ca;
+$color-light-aqua: #dbeceb;
+$color-white-dirty: #F7F7F2;
+$color-sand: #eeedea;
+$color-white: #fff;
+$color-light-gray: #F1F1F1;
+$color-light-gray-yellow: #F7F7F3;
+$color-lightest-gray: #F0F0F0;
+$color-medium-gray: #D5D5D5;
+$color-light-taupe: #c9c5b9;
+$color-gray-c0: #c0c0c0;
+$color-gray-cc: #CCCCCC;
+$color-gray-ec: #ECECEC;
+$color-gray-d8: #D8D8D8;
+$color-gray-f8: #f8f8f8;
+$color-gray: #949494;
+$color-medium-dark: #4C4C4C;
+$color-light: $color-lightest-gray;
+$color-dark: #323232;
+$color-black: #000;
+
+
+$color-link: $color-green;
+$color-error: $color-red;
+$color-success: $color-blue;
+$color: $color-dark;
+
+$color-highlight: lighten($color-light-blue, 30%);
+
+$header-color: $color-white;
+$header-background-color: $color-blue;
+
+$tpl-fa-icon-x: "\f00d";
+$tpl-fa-icon-search: "\f002";
+$tpl-fa-icon-calendar: "\f073";
+$tpl-fa-icon-edit: "\f044";
+$tpl-fa-icon-dropdown: "\f107";
+$tpl-fa-icon-arrow-down: "\f107";
+$tpl-fa-icon-arrow-up: "\f106";
+$tpl-fa-icon-arrow-thick-down: "\f078";
+$tpl-fa-icon-arrow-thick-up: "\f077";
+$tpl-fa-icon-arrow-thick-right: "\f054";
+$tpl-fa-icon-arrow-thick-left: "\f053";
+$tpl-fa-icon-chevron-circle-down: "\f13a";
+$tpl-fa-icon-chevron-circle-up: "\f139";
+$tpl-fa-icon-arrow-down-solid: "\f0d7";
+$tpl-fa-icon-play: "\f144";
+$tpl-fa-icon-play-secondary: "\e96a";
+$tpl-fa-icon-inr-plus-circle: "\f055";
+$tpl-fa-icon-x-clear: "\f057";
+
+//$tpl-icon-li-search: "\e922";
+//$tpl-icon-li-calendar: "\e789";
+//$tpl-icon-li-edit: "\e612";
+$tpl-icon-li-x: "\e92a";
+
+$tpl-lnr-icon-menu: "\e92b";
+$tpl-lnr-icon-download: "\e8f5";
+$tpl-lnr-icon-map-marker: "\e77a";
+$tpl-lnr-icon-birthday-cake: "\e7fe";
+$tpl-lnr-icon-gender-male: "\e732";
+$tpl-lnr-icon-gender-female: "\e731";
+
+@mixin tpl-line-separator() {
+    width: 100%;
+    height: 2px;
+    background-color: $color-gray;
+    @include background-image(linear-gradient(right, #fff, $color-gray 40%, $color-gray 60%, #fff));
+}
+
+$button-background-color: $color-blue;
+$button-background-color-hover: lighten($color-blue, 5%);
+
+$border-radius: 0;
+$border-color: $color-gray;
+$border-width: 1px;
+
+$field-height: 50px;
+$field-height-small: 40px;
+$field-border-width: 1px;
+$field-border: $field-border-width solid $border-color;
+$field-background: $color-white;
+$field-color: $color;
+$field-font-family: $font-family;
+$field-font-size: 18px;
+$field-font-size-small: 16px;
+$input-field-padding: 0 14px;
+$input-field-padding-small: 3px 14px 1px;
+
+/*$tpl-simple-form-button-width-big: 115px;*/
+$tpl-simple-form-button-width: 85px;
+$tpl-simple-form-button-width-small: 70px;
+
+$button-font-size: $field-font-size;
+$button-font-size-small: 14px;
+$button-border: none;
+$button-border-radius: 0;
+$button-color: $color-white;
+$button-padding: 0 22px;
+$button-padding-small: 1px 20px 0;
+
+
+$font-size-h1: 40px;
+$font-size-h2: 36px;
+$font-size-h3: 32px;
+$font-size-h4: 28px;
+$font-size-h5: 24px;
+$font-size-h6: 22px;
+
+
+
+@mixin tpl-link() {
+    color: $color-link;
+    outline: none;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin tpl-small-text() {
+    font-size: 11px;
+}
+
+@mixin tpl-centered-content($max-width: 1000px, $without-side-padding: false) {
+    max-width: $max-width + (2 * $default-content-padding-sides);
+    padding: 0 $default-content-padding-sides;
+    margin: 0 auto;
+    width: 100%;
+
+    &.tpl-centered-without-side-padding {
+        max-width: $max-width;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @if $without-side-padding == true {
+        max-width: $max-width;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@mixin tpl-linear-icon($content: false, $font-family: $font-family-icons-secondary ) {
+    ///* use !important to prevent issues with browser extensions that change fonts */
+    font-family: $font-family !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    //line-height: 1; // commented because of vertical alignments
+
+    ///* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+
+    ///* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @if $content != false {
+        content: $content;
+    }
+}
+
+@mixin tpl-close-icon($position: "static", $size: 20px, $color: $color-black) {
+    background: none;
+    cursor: pointer;
+    width: $size;
+    height: $size;
+
+    @if $position == "absolute" {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    } @else {
+        position: relative;
+    }
+
+    @if $position == "absolute-vertical" {
+        position: absolute;
+        top: 50%;
+        right: $default-content-padding;
+        margin-top: -$size/2;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        background: $color;
+        width: $size;
+        height: 2px;
+        transform: rotate(45deg);
+        margin-top: $size / 2;
+    }
+    &:after {
+        transform: rotate(135deg);
+    }
+}
+
+
+@mixin tpl-heading($i: false, $font-size-scale: 1/*, $background-color: false*/, $color: $color-dark) {
+    font-family: $font-family-secondary;
+    font-weight: 400;
+    color: $color;
+    padding: 0;
+    margin: 0;
+
+    @if $i == 1 {
+        font-size: ceil($font-size-h1 * $font-size-scale);
+    }
+    @if $i == 2 {
+        font-size: ceil($font-size-h2 * $font-size-scale);
+    }
+    @if $i == 3 {
+        font-size: ceil($font-size-h3 * $font-size-scale);
+    }
+    @if $i == 4 {
+        font-size: ceil($font-size-h4 * $font-size-scale);
+    }
+    @if $i == 5 {
+        font-size: ceil($font-size-h5 * $font-size-scale);
+    }
+    @if $i == 6 {
+        font-size: ceil($font-size-h6 * $font-size-scale);
+    }
+
+    /*@if $background-color {
+        line-height: 1.5;
+        background-color: transparent;
+
+        span {
+            background-color: tpl-alt-color-opacity($color-blue);
+            color: #fff;
+            display: inline;
+            -webkit-box-decoration-break: clone;
+            -moz-box-decoration-break: clone;
+            box-decoration-break: clone;
+            padding: 2px 10px;
+        }
+    }*/
+}
+
+
+@mixin tpl-body() {
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+@mixin tpl-button-base-small() {
+    font-size: $button-font-size-small;
+    height: $field-height-small;
+    line-height: $field-height-small;
+    padding: $button-padding-small;
+}
+
+// $color - string (hex, rgb, rgba)
+// $hover-color - string (hex, rgb, rgba)
+// $size - string ("small", "normal")
+// $outline - bool
+@mixin tpl-button($color: $button-background-color, $hover-color: $button-background-color-hover, $size: "normal", $outline: false) {
+    @include inline-block;
+    font-family: $font-family;
+    font-size: $button-font-size;
+    font-style: normal;
+    cursor: pointer;
+    text-align: center;
+    height: $field-height;
+    line-height: $field-height;
+    text-shadow: none;
+    box-shadow: none;
+    color: $button-color;
+    @include border-radius($border-radius);
+    border: $button-border;
+    border-color: $color;
+    background-color: $color;
+    padding: $button-padding;
+    margin: 0;
+    outline: none;
+    white-space: nowrap;
+
+    @if $size == "small" {
+        @include tpl-button-base-small;
+    }
+
+    @if $size == "small-auto" {
+        @include tpl-button-base-small;
+        height: auto;
+        line-height: normal;
+        @include border-radius(10px);
+        padding: 8px 14px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: $hover-color;
+        border-color: $hover-color;
+    }
+
+    @if $outline == true {
+        color: $color-white;
+        background-color: transparent;
+        border: 2px solid $color-white;
+        line-height: $field-height - 2px;
+
+        @if $size == "small" {
+            line-height: $field-height-small - 2px;
+        }
+
+        &:hover {
+            color: $color-black;
+            background-color: $color-white;
+            border-color: $color-white;
+        }
+    }
+}
+
+@mixin tpl-button-small() {
+    @include tpl-button;
+    @include tpl-button-base-small;
+}
+
+@mixin tpl-button-outline() {
+    @include tpl-button();
+    background: transparent;
+    border: 2px solid white;
+    line-height: 46px; //must be corrected for 4px of top and bottom borders
+    &:hover {
+        background: $color-white;
+        background-color: $color-white;
+        color: $color-dark;
+        border: 2px solid white;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+
+@mixin tpl-input-field-placeholder() {
+    color: tpl-alt-color-opacity($color, .4);
+}
+
+@mixin tpl-input-field-base-small() {
+    height: $field-height-small;
+    line-height: $field-height-small;
+    font-size: $field-font-size-small;
+    padding: $input-field-padding-small;
+}
+
+@mixin tpl-input-field($border: true, $size: "normal") {
+    @if $border == true {
+        border: $field-border;
+    } @else {
+        border: none;
+    }
+    @include border-radius($border-radius);
+    height: $field-height;
+    line-height: $field-height;
+    vertical-align: middle;
+    font-family: $field-font-family;
+    font-size: $field-font-size;
+    width: 100%;
+    background-color: $field-background;
+    color: $field-color;
+    padding: $input-field-padding;
+    margin: 0;
+    outline: none;
+
+    @if $size == "small" {
+        @include tpl-input-field-base-small;
+    }
+
+    @include input-placeholder {
+        @include tpl-input-field-placeholder;
+    }
+
+    &:disabled,
+    .disabled,
+    &[disabled=disabled] {
+        @include tpl-disabled;
+    }
+}
+
+@mixin tpl-input-field-small($border: true) {
+    @include tpl-input-field($border);
+    @include tpl-input-field-base-small;
+}
+
+@mixin tpl-input-field-select($img_prefix: "../") {
+    background-image: url('#{$img_prefix}img/arrow-gray-down.png');
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+    @include tpl-cancel-browser-style;
+    padding-right: 40px;
+}
+
+@mixin tpl-input-field-textarea() {
+    min-height: 100px;
+    height: auto;
+    line-height: normal;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+@mixin tpl-field-with-icon-holder(){
+    position: relative;
+}
+@mixin tpl-field-with-icon-holder-after($content, $font-family: $font-family-icons) {
+    @if $font-family == $font-family-icons {
+        font-family: $font-family;
+        content: $content;
+        font-weight: 300;
+        color: $color-medium-gray;
+    } @else {
+        @include tpl-linear-icon($content);
+        color: $color-gray;
+    }
+    position: absolute;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    z-index: 1;
+    top: 50%;
+    right: 13px;
+    margin-top: -12px;
+}
+@mixin tpl-field-with-icon(){
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+    padding-right: 35px;
+}
+
+@mixin tpl-disabled() {
+    @include opacity(0.5);
+    cursor: not-allowed;
+    pointer-events: auto;
+}
+
+@mixin tpl-full-spread($position: absolute/*, $background-color: false*/){
+    position: $position;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    /*@if $background-color != false {
+        @if $background-color == true {
+            background-color: rgba(0,0,0,0.3);
+        } @else {
+            background-color: $background-color;
+        }
+    }*/
+}
+
+
+// Checkbox and Radio
+$checkbox-radio-color: $border-color;
+$checkbox-radio-color-active: $color-blue;
+$checkbox-radio-border-width: 1px;
+$checkbox-radio-border: $checkbox-radio-border-width solid $checkbox-radio-color;
+$checkbox-radio-size: 22px;
+
+
+@mixin tpl-checkbox-radio-field() {
+    position: absolute;
+    @include opacity(0);
+    z-index: -1;
+}
+@mixin tpl-checkbox-radio-label($additional-padding-left: 6px) {
+    position: relative;
+    height: $checkbox-radio-size;
+    line-height: $checkbox-radio-size;
+    text-align: left;
+    width: auto;
+    @include inline-block;
+    font-size: $font-size;
+    font-weight: 300;
+    color: $color-dark;
+    padding: 0 0 3px ($checkbox-radio-size + $additional-padding-left);
+}
+@mixin tpl-checkbox-radio($on-white-background: false, $position: false) {
+    content: " ";
+    @include inline-block;
+    border: $checkbox-radio-border;
+    width: $checkbox-radio-size;
+    height: $checkbox-radio-size;
+    line-height: $checkbox-radio-size;
+    @include box-sizing(border-box);
+    cursor: pointer;
+    text-align: center;
+    background: none;
+
+    @if $on-white-background == true {
+        background: $color-white;
+    }
+
+    @if $position == "absolute-vertical" {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        vertical-align: middle;
+        margin-top: -($checkbox-radio-size / 2) - 2;
+    }
+}
+@mixin tpl-checkbox-radio-hovered() {}
+
+// Checkbox
+@mixin tpl-checkbox() {
+    border: $checkbox-radio-border;
+    @include border-radius(1px);
+}
+@mixin tpl-checkbox-checked($icon: "embedded") {
+    @if $icon == "icon" {
+        &:after {
+            position: absolute;
+            top: -2px;
+            left: 1px;
+            content: "\f00c";
+            font-family: $font-family-icons;
+            color: $checkbox-radio-color-active;
+            font-size: 20px;
+        }
+    } @else {
+        border: 4px solid $checkbox-radio-color-active;
+        background: $checkbox-radio-color-active;
+        color: #fff;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+    }
+}
+// Radio
+@mixin tpl-radio($on-white-background: false) {
+    border: $checkbox-radio-border;
+    @include border-radius(50%);
+
+    @if $on-white-background == true {
+        border-color: transparent;
+    }
+}
+@mixin tpl-radio-checked($aligned: "center") {
+    background-color: transparent;
+    border-color: $checkbox-radio-color;
+
+    &:after {
+        content: "";
+        display: block;
+        @include border-radius(50%);
+        background: $checkbox-radio-color-active;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        margin: -4px 0 0 -5px;
+    }
+
+    @if $aligned == "left" {
+        &:after {
+            left: 6px;
+            margin-left: 0;
+            margin-top: -7px;
+        }
+    }
+}
+
+@mixin tpl-cancel-browser-style() {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-appearance: none !important;
+}

@@ -1,0 +1,75 @@
+@import "../../variables";
+
+.com-advocacy .advocacy-promote {
+    padding-top: 5px;
+    padding-bottom: $default-content-padding;
+    max-width: 650px;
+
+    .page-title {
+        display: none;
+    }
+    h2.main-title {
+        font-weight: 900;
+    }
+
+    .form {
+        width: 100%;
+        padding-top: 15px;
+
+        .input-group {
+            margin-bottom: 8px;
+            .hint {
+                font-size: 14px;
+                font-weight: 700;
+                padding-left: 0;
+                margin-bottom: 5px;
+            }
+        }
+
+        .square-button.send-invites {
+            @include tpl-button();
+            margin-right: 15px;
+            border-radius: 0;
+            padding-left: 34px;
+            padding-right: 34px;
+        }
+        .no-thanks {
+            color: $color-green;
+            float: left;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            padding-top: 17px;
+        }
+    }
+
+    @media (max-width: 800px) {
+
+        .share-campaign {
+            text-align: center;
+
+            div {
+                @include inline-block;
+            }
+            .title,
+            .advocacy-elements-social-sharing-plugins {
+                float: none;
+            }
+        }
+
+        .form {
+            text-align: center;
+            margin: 0 auto;
+
+            .input-group {
+                text-align: left;
+            }
+
+            .square-button.send-invites,
+            .no-thanks {
+                float: none;
+                margin: 0 auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,201 @@
+@import "../../variables";
+
+.payment-processors {
+	.forms {
+		.title-wrapper {
+			.title {
+				float: none;
+				text-align: center;
+                @include tpl-heading(2);
+                background: none;
+			}
+          .title-options {
+            float: none;
+
+            .form-input-holder {
+              float: none;
+              max-width: 800px;
+              margin: 0 auto;
+              text-align: center;
+            }
+          }
+		}
+		
+		.form-input-wrapper {
+            text-align: left;
+            padding: 6px 0;
+            margin: 0;
+
+			label {
+                display: none;
+                color: tpl-alt-color-opacity($color-black);
+                padding-bottom: 5px;
+			}
+
+            &.payment-type-field {
+                margin: 15px 0 10px;
+            }
+
+			&.form-label-left {
+				.form-input-label {
+
+				}
+			}
+
+            &.has-buttons {
+                text-align: center;
+            }
+			
+			.form-input-holder {
+
+				label {
+                    display: inline-block;
+                    position: relative;
+                    height: 24px;
+                    line-height: 24px;
+                    padding-left: 35px;
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: tpl-alt-color-opacity($color-black);
+                    padding-bottom: 0;
+                    padding-top: 0;
+					&.checkbox input,
+					&.radio input {
+                        display: none;
+					}
+					&:before {
+                        font-family: $font-family-icons;
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        line-height: 24px;
+                        font-size: 18px;
+                        font-weight: normal;
+                        background: #fff;
+                        border: solid 1px $color-gray;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: '';
+                        text-align: center;
+                        color: $color-green;
+					}
+					&.checked:before {
+                        content: '\f00c';
+					}
+					&.radio.checked:before {
+                        content: '\f111';
+                        line-height: 22px;
+                        font-size: 14px;
+					}
+				}
+				input[type=text],
+				input[type=email],
+				input[type=password],
+				input[type=number],
+				input[type=numeric],
+				input[type=card],
+				input[type=phone],
+				textarea,
+				select {
+                    width: 100%;
+                    outline: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    @include tpl-input-field;
+				}
+				select {
+                    line-height: 30px;
+                    background: #fff url("../../../img/drop-down-arrow.png") no-repeat right 12px center !important;
+				}
+				input[type=checkbox],
+				input[type=radio] {
+                    display: none;
+				}
+				.form-input-error {
+					span {
+                        display: block;
+                        color: $color-error;
+					}
+				}
+				.form-field-button {
+
+				}
+				
+			}
+            &.is-combo {
+                .form-input-holder {
+                    position: relative;
+                    input {
+                        background: #fff url("../../../img/drop-down-arrow.png") no-repeat right 12px center !important;
+                    }
+                    .combo-options {
+                        border: solid 1px #bbbdc0;
+                        border-top: none 0;
+                    }
+                }
+            }
+            &.form-disabled {
+                opacity: 0.5;
+            }
+		}
+
+        .field-group {
+            .payment-card-security-code-field {
+                padding-left: 0 !important;
+            }
+        }
+
+        .billing-information {
+            padding-top: 30px;
+
+            .form-panel-saved-addresses {
+                .address-id-field {
+                    .form-input-holder {
+                        padding-right: 0;
+
+                        .form-field-button {
+                            display: inline-block;
+                            float: right;
+                            position: static;
+                            width: auto;
+                            font-size: 14px;
+                            color: $color-green;
+                            background: none;
+                            border: none 0;
+                            padding: 0;
+                            font-weight: 700;
+                            margin: 8px 5px 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+		.form-actions {
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            input {
+                @include tpl-button($color-green, $color-green);
+                margin: 0 5px;
+            }
+            a {
+                @include tpl-button($color-green, $color-green);
+                background: none;
+                border: none;
+                color: tpl-alt-color-opacity($color-black);
+                padding-left: 10px;
+                padding-right: 10px;
+                margin: 0 5px;
+                margin-left: 10px;
+
+                &:hover {
+                    background: none;
+                    border: none;
+                }
+            }
+		}
+	}
+}

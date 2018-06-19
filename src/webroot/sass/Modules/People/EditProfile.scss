@@ -1,0 +1,162 @@
+@import "../../variables";
+
+.people-modules-edit-profile {
+    max-width: 600px;
+    padding: $default-content-padding*0.5 $default-content-padding-sides $default-content-padding;
+    margin: 0 auto;
+
+    .x-box-item .group-title {
+        color: $color-black;
+        font-family: $font-family;
+        padding: 35px 0 5px 1px;
+        font-size: 14px;
+        font-weight: 700;
+
+        // Hide "Personal Information" title
+        &.personal-info {
+            display: none;
+        }
+        span {
+            display: none;
+        }
+    }
+
+    // "This email is associated..." warning
+    .crm-address-container .payment-method-warning {
+        border: 1px solid $color-dark !important;
+        background: transparent !important;
+        height: 62px;
+        display: none;
+        .x-form-item-body {
+            padding: 0 15px 0;
+            .x-form-display-field {
+                font-family: $font-family;
+                font-size: 15px;
+                font-style: italic;
+                font-weight: 500;
+                position: relative;
+                padding: 8px !important;
+                display: inline;
+                &:before {
+                    content: "* ";
+                    position: absolute;
+                    top: 7px;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    // Add Phone and Add Address buttons
+    .crm-field-container .add-address-wrapper .x-box-inner > div,
+    .crm-field-container .add-phone-wrapper .x-box-inner > div {
+        width: 100% !important;
+
+        .add-button {
+            right: 0;
+            top: 0 !important;
+            background-color: transparent !important;
+            border: none;
+                button {
+                    float: right;
+                }
+                .x-btn-inner {
+                    font-size: $font-size;
+                    color: $color-green !important;
+                    background-color: transparent !important;
+                    height: auto;
+                    float: right;
+                    line-height: normal;
+                    text-transform: none;
+                    font-weight: 600;
+                }
+
+            .x-btn-inner:before {
+                font-family: $font-family-icons;
+                content: $tpl-fa-icon-inr-plus-circle;
+                font-weight: 400;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    // First name & last name fields
+    .x-container.crm-name-fieldset .x-box-inner {
+        height: $field-height !important;
+        .person-field-lastname {
+            .x-form-item-body {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .x-reset {
+        // overwrites ExtJS button hover style
+        .x-btn-default-small-over {
+            background-image: none;
+            background-color: transparent;
+        }
+
+        .x-form-text {
+            height: $field-height;
+            font-family: $font-family;
+            color: $color-gray;
+            font-size: 16px;
+            border: 0 none;
+        }
+
+        .x-toolbar-footer {
+            padding: 1px;
+        }
+
+        .remove-button {
+            border: none;
+            .x-btn-center {
+                @include tpl-button($color: $color-red, $hover-color: tpl-alt-color-opacity($color-red));
+                min-height: 50px;
+                border: none;
+                .x-btn-inner {
+                    padding: 0;
+                }
+            }
+        }
+
+        // Icons on the right side of input fields (calendar, dropdown arrow...)
+        .x-form-trigger {
+            height: $field-height;
+        }
+    }
+
+    // Save button
+    .x-toolbar .x-btn.save-profile-button {
+        @include tpl-button();
+        .x-btn-center {
+            width: 100%;
+            .x-btn-inner {
+                border: none;
+                font-size: 0 !important;
+                /*font-weight: 400 !important;*/
+                height: 50px !important;
+                line-height: 50px !important;
+                //width: 100% !important;
+                &:before {
+                    content: "Save Profile Information";
+                    padding: 0 20px;
+                    color: $color-white;
+                    font-size: $button-font-size;
+                }
+            }
+        }
+    }
+
+    // Responsiveness
+    @media (max-width:570px) {
+        .x-toolbar .x-btn.save-profile-button {
+            width: 230px;
+            .x-btn-center .x-btn-inner:before {
+                padding: 0;
+                content: "Save";
+            }
+        }
+    }
+}

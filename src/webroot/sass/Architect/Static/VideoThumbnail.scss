@@ -1,0 +1,94 @@
+@import "../../variables";
+
+.tpl-architect-static-video-thumbnail {
+    padding: 20px 0;
+
+    .tpl-architect-static-video-thumbnail-inner {
+        position: relative;
+        min-height: 180px;
+        padding-left: 320px;
+
+        @media (max-width: $break-tablet) {
+            min-height: 150px;
+            padding-left: 240px;
+        }
+
+        @media (max-width: $break-mobile) {
+            min-height: 0;
+            padding-left: 0;
+        }
+    }
+
+    .tpl-video-thumbnail {
+        width: 320px;
+        height: 180px;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @media (max-width: $break-tablet) {
+            width: 240px;
+            height: 150px;
+        }
+        @media (max-width: $break-mobile) {
+            width: 100%;
+            height: auto;
+            min-height: 100px;
+            position: static;
+        }
+    }
+
+    .tpl-content {
+        padding-left: 30px;
+
+        @media (max-width: $break-mobile) {
+            padding-left: 0;
+            padding-top: 10px;
+        }
+
+        .tpl-title {
+            text-transform: uppercase;
+        }
+
+        .tpl-body {
+            font-style: italic;
+            padding-top: 15px;
+        }
+
+        .tpl-button-holder {
+            padding-top: 15px;
+
+            .tpl-watch-now-button {
+                font-size: 18px;
+                font-family: $font-family;
+                font-weight: 700;
+                font-style: italic;
+            }
+        }
+    }
+
+    &.small-button .tpl-content .tpl-button-holder .tpl-watch-now-button {
+        @include tpl-button($size: "small");
+    }
+    &.outline-button .tpl-content .tpl-button-holder .tpl-watch-now-button {
+        @include tpl-button();
+    }
+    &.link-button .tpl-content .tpl-button-holder .tpl-watch-now-button {
+        @include tpl-link;
+        border: none 0;
+        background: none;
+        height: auto;
+        line-height: normal;
+        padding: 0;
+        text-transform: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: $font-size;
+        font-family: $font-family;
+    }
+
+    &.hide-description .tpl-content .tpl-body {
+        display: none;
+    }
+}

@@ -1,0 +1,359 @@
+@import "../../variables";
+
+
+.com-advocacy.confirmation {
+    padding-top: $default-content-padding;
+    padding-bottom: $default-content-padding;
+}
+
+.com-advocacy.confirmation .page-title {
+    @include tpl-heading(2);
+    border: none;
+    margin-bottom: 25px
+}
+
+.com-advocacy .campaign-url-info {
+    padding-bottom: 55px;
+}
+
+.com-advocacy .campaign-url-info .title {
+    @include tpl-heading(6);
+    font-family: $font-family;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 2px 2px 2px;
+    margin: 0;
+}
+.com-advocacy .campaign-url-info .link {
+    border: none;
+    background-color: $color-gray-ec;
+    color: $color-dark;
+    font-size: 16px;
+    font-weight: normal;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    overflow-wrap: break-word;
+    overflow: visible;
+    @include border-radius($border-radius);
+    padding: 18px 16px;
+}
+
+.com-advocacy .campaign-url-info .registration {
+    margin-top: 20px;
+}
+.com-advocacy .campaign-url-info .registration span {
+    margin: 15px 0;
+}
+.com-advocacy .campaign-url-info .registration span.big {
+    margin: 5px 15px 5px 0;
+}
+.com-advocacy .campaign-url-info .registration .login-register {
+    @include tpl-button();
+}
+
+
+.com-advocacy .campaign-donations .title {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.com-advocacy .campaign-donations .details .completion-bar-achieved {
+    margin-top: 15px;
+}
+
+.com-advocacy .campaign-donations .details .completion-bar-achieved .achieved-value {
+    font-size: 18px;
+    font-weight: 300;
+}
+.com-advocacy .campaign-donations .details .completion-bar-achieved .achieved-title {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: $font-family;
+}
+
+.com-advocacy .campaign-donations .details .completion-bar {
+    width: 47%;
+    background-color: $color-gray-cc;
+    @include border-radius(1px);
+    margin-top: 6px;
+}
+
+.com-advocacy .campaign-donations .details .completion-bar .copletion-progress {
+    height: 10px;
+    background-color: $color-green;
+    @include border-radius(1px);
+    max-width: 100%;
+}
+
+.com-advocacy .campaign-donations .details .completion-bar .min,
+.com-advocacy .campaign-donations .details .completion-bar .max,
+.com-advocacy .campaign-donations .details .completion-bar .now_holder,
+.com-advocacy .campaign-donations .details .completion-bar .now_holder .now {
+    font-size: 15px;
+    font-weight: 300;
+    color: $color-black;
+    top: 14px;
+}
+.com-advocacy .campaign-donations .details .completion-bar .min {
+    display: none;
+}
+.com-advocacy .campaign-donations .details .completion-bar .now_holder {
+    margin-left: 0;
+    max-width: 100%;
+}
+.com-advocacy .campaign-donations .details .completion-bar .now_holder .now {
+    max-width: 100%;
+}
+
+.com-advocacy .campaign-donations .details .financial-info {
+    @include tpl-heading(6);
+    font-size: 20px;
+    font-weight: 700;
+    font-family: $font-family;
+    color: $color-dark;
+    margin: -27px 0 0 5%;
+}
+
+.com-advocacy .campaign-donations .details .financial-info p {
+    float: none;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+.com-advocacy .campaign-donations .details .donateNow,
+.com-advocacy .donation-details .title .donateNow {
+    @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green));
+    font-weight: 400;
+    border-radius: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    max-width: 200px;
+    position: relative;
+}
+
+.com-advocacy .campaign-donations .details .donateNow {
+    margin: -27px 0 0;
+}
+
+.com-advocacy .donation-details .title .donateNow {
+    position: absolute;
+    right: 0;
+    top: -118px;
+}
+
+.com-advocacy .campaign-details-body {
+    padding: 52px 0;
+}
+
+
+
+.com-advocacy .advocacy-campaign-details {
+    border: none;
+    padding-bottom: 0;
+}
+
+.com-advocacy .advocacy-campaign-details .title {
+    @include tpl-heading(2);
+    position: relative;
+    padding: 26px 200px 26px 0;
+    margin: 20px 0;
+}
+
+.com-advocacy .advocacy-campaign-details .title a.edit {
+    @include tpl-button($color: $color-blue, $hover-color: tpl-alt-color-opacity($color-blue));
+    position: absolute;
+    right: 0;
+    top: 21px;
+    max-width: 200px;
+}
+
+.com-advocacy .advocacy-campaign-details .advocacy-details {
+    color: $color-dark;
+    font-weight: 300;
+    text-shadow: none;
+    font-style: normal;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    line-height: 26px;
+    font-size: 16px;
+}
+.com-advocacy .advocacy-campaign-details .advocacy-details img {
+    float: left;
+    width: 52%;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    padding: 5px 50px 10px 0;
+    margin: 0;
+}
+.com-advocacy .advocacy-campaign-details .advocacy-details p {
+    margin: 0;
+}
+
+.com-advocacy .advocacy-campaign-details .tpl-advocacy-details .tpl-content-holder {
+    padding: 0;
+}
+
+.com-advocacy .donation-details {
+    border-top: 1px solid $color-medium-gray;
+    padding-bottom: 15px;
+}
+
+.com-advocacy .donation-details .title {
+    line-height: normal;
+    margin: 40px 0 25px;
+    position: relative;
+}
+.com-advocacy .donation-details .title p {
+    @include tpl-heading(4);
+}
+.com-advocacy .donation-details .title .donateNow {
+    margin: 4px 0;
+}
+
+
+.com-advocacy .donation-details .table table {
+    color: $color-dark;
+    font-size: 16px;
+    border: none;
+}
+
+.com-advocacy .donation-details .table table tr.head td {
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-dark;
+    border-bottom: none;
+    padding: 5px 20px 5px 13px;
+    width: 22%;
+}
+
+.com-advocacy .donation-details .table table tr.records {
+    background-color: $color-lightest-gray;
+    margin-bottom: 5px;
+}
+.com-advocacy .donation-details .table table tr.records:nth-child(odd) {
+    background-color: $color-gray-f8;
+}
+.com-advocacy .donation-details .table table tr.records td {
+    border-bottom: solid 5px $color-white;
+    padding: 14px 20px 14px 13px;
+}
+
+
+@media (max-width: 800px){
+    .com-advocacy .campaign-url-info .title {
+        @include tpl-heading(6, 0.9);
+    }
+    .com-advocacy .campaign-url-info .link {
+        font-size: ceil(20px * 0.9);
+    }
+    .com-advocacy .campaign-donations .title {
+        @include tpl-heading(6, 0.9);
+    }
+
+    .com-advocacy .campaign-donations .details .completion-bar {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+    .com-advocacy .campaign-donations .details .financial-info {
+        width: 23%;
+        margin: 45px 0 0 0;
+    }
+    .com-advocacy .campaign-donations .details .financial-info p {
+        margin-top: 5px;
+    }
+    .com-advocacy .campaign-donations .details .donateNow {
+        margin: 45px 0 0 0;
+    }
+
+    .com-advocacy .campaign-details-body {
+        padding-top: 40px;
+    }
+
+    .com-advocacy .advocacy-campaign-details .title {
+        @include tpl-heading(3, 0.9);
+        padding: 24px 200px 24px 0;
+    }
+    .com-advocacy .donation-details .title p {
+        @include tpl-heading(5, 0.9);
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 600px){
+    .com-advocacy .page-title {
+        text-align: center;
+    }
+    .com-advocacy .advocacy-campaign-details .title {
+        padding: 24px 0 24px 0;
+    }
+
+    .com-advocacy .campaign-donations .details {
+        text-align: center;
+    }
+    .com-advocacy .campaign-donations .details .completion-bar-achieved {
+        text-align: left;
+    }
+    .com-advocacy .campaign-donations .details .financial-info {
+        width: 50%;
+    }
+    .com-advocacy .campaign-donations .details .donateNow {
+        float: none;
+        margin-top: 35px;
+    }
+
+    .com-advocacy .advocacy-campaign-details .title {
+        text-align: center;
+        padding-right: 0;
+    }
+    .com-advocacy .advocacy-campaign-details .title a.edit {
+        position: static;
+        display: block;
+        max-width: 210px;
+        margin: 20px auto 0;
+    }
+
+    .com-advocacy .advocacy-campaign-details .advocacy-details {
+        text-align: center;
+    }
+    .com-advocacy .advocacy-campaign-details .advocacy-details img {
+        float: none;
+        width: auto;
+        display: block;
+        clear: both;
+        text-align: center;
+        padding: 0;
+        margin: 5px auto 20px;
+    }
+
+    .com-advocacy .donation-details .title .donateNow {
+        display: none;
+    }
+
+    .com-advocacy .donation-details .table table tr.head td.last,
+    .com-advocacy .donation-details .table table tr.records td.last {
+        display: none;
+    }
+}
+
+@media (max-width: 450px){
+    .com-advocacy .donation-details .table table tr.head td,
+    .com-advocacy .donation-details .table table tr.records td {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media (max-width: 400px){
+    .com-advocacy .donation-details .table table tr.head td,
+    .com-advocacy .donation-details .table table tr.records td {
+        font-size: 14px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}

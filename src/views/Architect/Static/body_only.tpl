@@ -1,0 +1,1 @@
+<div class="tpl-architect-static-body-only">{$body}</div> 

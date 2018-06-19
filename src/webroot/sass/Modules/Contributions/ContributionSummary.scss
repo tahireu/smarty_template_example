@@ -1,0 +1,88 @@
+@import "../../variables";
+
+.contributions-modules-contribution-summary {
+    padding-left: $default-content-padding-sides;
+    padding-right: $default-content-padding-sides;
+
+    .title-box {
+        @include tpl-heading(6);
+        background-color: transparent;
+        text-align: left;
+        padding: 0 0 10px;
+    }
+
+    .body-box {
+        background-color: $color-light-gray;
+        padding: 0 0 10px;
+        height: auto;
+        .summary-text {
+            font-size: $font-size;
+            font-weight: 300;
+            color: $color-white;
+            background: $color-blue;
+            font-style: normal;
+            padding: 10px 17px 10px 17px;
+            height: auto;
+            margin-bottom: 25px;
+            a span {
+                font-weight: 300;
+                color: $color-white;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .campaigns {
+            padding: 0 20px 0;
+            .campaign {
+                padding-left: 75px;
+                height: 80px;
+                margin: 0;
+                padding-top: 5px;
+                .name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 14px;
+                }
+                .name,
+                .details {
+                    color: $color-black;
+                    padding-bottom: 8px;
+                }
+                img{
+                    border: none;
+                    box-shadow: none;
+                    @include border-radius(50%);
+                }
+                .details {
+                    font-size: $font-size;
+                    font-weight: 300;
+                    a {
+                        span {
+                            @include tpl-link;
+                            font-weight: 300;
+                        }
+                    }
+                    a,
+                    a span:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 400px) {
+        padding-left: 0;
+        padding-right: 0;
+        .body-box .campaigns .campaign {
+            .details a {
+                display: block;
+            }
+            .name {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

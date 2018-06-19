@@ -1,0 +1,98 @@
+@import '../../variables';
+
+.tpl-architect-story-detail {
+    .tpl-content {
+        margin-top: 35px;
+        line-height: 26px;
+        .tpl-date-and-social-buttons-holder {
+            height: 60px;
+            .tpl-date,
+            .tpl-social-buttons {
+                width: 50%;
+            }
+            .tpl-date {
+                text-align: left;
+            }
+            .tpl-social-buttons {
+                text-align: right;
+                .tpl-share-button {
+                    font-size: 25px;
+                    margin-left: 5px;
+                    color: $color-blue;
+                }
+            }
+            .tpl-share-facebook:after,
+            .tpl-share-twitter:after {
+                @include border-radius(50%);
+                color: $color-white;
+                background: $color-blue;
+                font-family: $font-family-icons;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                font-size: 14px;
+                text-align: center;
+            }
+            .tpl-share-facebook:after {
+                content: '\f09a';
+            }
+            .tpl-share-twitter:after {
+                content: '\f099';
+            }
+        }
+        .tpl-image,
+        .tpl-body {
+            img {
+                width: 100%;
+            }
+        }
+        .tpl-image img{
+            margin-bottom: 30px;
+        }
+        .tpl-body img{
+            margin: 10px 0;
+        }
+        .tpl-summary {
+            padding-bottom: 20px;
+        }
+        .tpl-body {
+            blockquote {
+                font-size: 20px;
+                display: block;
+                padding: 30px 0;
+                border-top: 1px solid $color-gray;
+                border-bottom: 1px solid $color-gray;
+                margin: 35px 0;
+            }
+            .tpl-button-holder {
+                display: block;
+                .tpl-button {
+                    margin: 30px 0 40px;
+                }
+            }
+        }
+    }
+    @media (min-width: 600px) {
+        &.tpl-quote-left .tpl-content .tpl-body {
+            overflow: auto;
+            position: relative;
+            margin-top: 15px;
+            .tpl-body-inner {
+                width: 68%;
+                float: right;
+                blockquote {
+                    font-size: 20px;
+                    display: block;
+                    padding: 30px 0;
+                    border-top: 1px solid $color-gray;
+                    border-bottom: 1px solid $color-gray;
+                    margin: 8px 0 35px;
+                    position: absolute;
+                    width: 25%;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}

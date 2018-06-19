@@ -1,0 +1,291 @@
+@import "../../variables";
+
+.com-advocacy {
+    line-height: normal;
+    max-width: 1000px + 2*$default-content-padding-sides;
+    padding: 0 $default-content-padding-sides 40px;
+    margin: 0 auto;
+}
+
+/* Progress Bar */
+.com-advocacy .progress-bar {
+    padding: 25px 0 30px;
+    margin: 15px 0;
+}
+
+.com-advocacy .progress-bar table {
+    margin: auto;
+}
+
+.com-advocacy .progress-bar table tr {
+    text-align: center;
+}
+.com-advocacy .progress-bar table tr td.separator {
+    display: none;
+}
+
+.com-advocacy .progress-bar table tr td.step,
+.com-advocacy .progress-bar table tr td.step .step-number,
+.com-advocacy .progress-bar table tr td.step .step-name {
+    @include inline-block;
+    @include tpl-heading(5);
+    color: $color-dark;
+    float: none;
+    background: none;
+}
+
+.com-advocacy .progress-bar table tr td.step.selected .step-name {
+    color: $color-green;
+}
+
+.com-advocacy .progress-bar table tr td.step {
+    padding: 10px 22px;
+}
+
+.com-advocacy .progress-bar table tr td.step .step-number {
+    font-size: 20px;
+    font-family: $font-family;
+    border: 2px solid $color-dark;
+    color: $color-dark;
+    width: 38px;
+    height: 38px;
+    line-height: 32px;
+    text-align: center;
+    @include border-radius(50%);
+    margin-right: 10px;
+}
+
+/* selected */
+.com-advocacy .progress-bar table tr td.step.selected .step-number {
+    color: $color-white;
+    background: $color-green;
+    border-color: $color-green;
+}
+
+/* Responsive - Progress Bar */
+@media (max-width: 870px){
+    .com-advocacy .progress-bar table tr td.step {
+        padding: 10px 15px;
+    }
+}
+@media (max-width: 800px){
+    .com-advocacy .progress-bar {
+        max-width: 240px;
+        padding: 15px 10px 20px;
+        margin: 0 auto;
+    }
+    .com-advocacy .progress-bar table tr td.step {
+        display: block;
+        width: 100%;
+        float: none;
+        text-align: left;
+    }
+}
+
+/*Borders*/
+.tpl-advocacy-page-title,
+.com-advocacy .advocacy-campaign-details .title {
+    border-top: 1px solid $color-medium-gray;
+    border-bottom: 1px solid $color-medium-gray;
+}
+.com-advocacy .customize,
+.tpl-advocacy-page-footer {
+    border-top: 1px solid $color-medium-gray;
+}
+
+
+/* Common - Start */
+.com-advocacy .customize,
+.com-advocacy .advocacy-promote {
+    padding: 37px 0;
+}
+
+.com-advocacy .customize {
+    margin: 0 auto;
+}
+
+.com-advocacy.confirmation,
+.com-advocacy.view-campaign {
+    padding-bottom: 30px;
+}
+
+.com-advocacy.view-campaign {
+    padding-top: 67px;
+    padding-bottom: 54px;
+}
+
+.com-advocacy .page-title,
+.com-advocacy h2.main-title {
+    @include tpl-heading(2);
+    width: 100%;
+    border: none;
+    background: none;
+    line-height: normal;
+    color: $color-black;
+    text-align: left;
+    border-top: 1px solid $color-medium-gray;
+    border-bottom: 1px solid $color-medium-gray;
+    padding: 21px 0;
+    margin: 10px 0 20px;
+}
+
+/* Responsive titles */
+@media (max-width: 800px){
+    .com-advocacy .page-title,
+    .com-advocacy h2.main-title,
+    .com-advocacy .customize h2.main-title {
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+
+/* Buttons */
+/*.com-advocacy .rounded-button,
+.com-advocacy .rounded-button.big {
+    @include tpl-button($color-blue, true);
+}*/
+
+/* Share buttons */
+.com-advocacy .share-campaign {
+    margin: 13px 0;
+}
+.com-advocacy .share-campaign .title {
+    @include tpl-heading(6);
+    padding-right: 10px;
+    margin: 7px 0;
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins {
+    margin: 5px 0;
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a {
+    position: relative;
+    font-family: $font-family-icons;
+    @include inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a:before {
+    position: absolute;
+    font-size: 34px;
+    font-weight: 400;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a img {
+    display: none;
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a.facebook_share:before {
+    color: #1954A1;
+    content: "\f082";
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a.twitter_share:before {
+    color: #27B5E2;
+    content: "\f081";
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a.linkedin_share:before {
+    color: #308FB0;
+    content: "\f08c";
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a.google_share:before {
+    color: #E96A51;
+    content: "\f0d4";
+}
+.com-advocacy .share-campaign .advocacy-elements-social-sharing-plugins a.awareness_share {
+    display: none;
+}
+
+/* no results */
+.com-advocacy .results .no-items {
+    color: $color-black;
+    padding: 10px;
+}
+
+/* Common - End */
+
+/* Forms - Start */
+.com-advocacy .form .input-group,
+.com-advocacy .customize .form .input-group,
+.com-advocacy .advocacy-promote .form .input-group {
+    color: $color-black;
+}
+
+.com-advocacy .form .input-group .title,
+.com-advocacy .customize .form .input-group .title,
+.com-advocacy .advocacy-promote .form .input-group .title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px; // Changing this will not affect Advocacy/Customize-> "Campaign Description" title
+}
+.com-advocacy .form .input-group.required .title,
+.com-advocacy .customize .form .input-group.required .title,
+.com-advocacy .advocacy-promote .form .input-group.required .title {
+    background: none;
+    padding-left: 0;
+}
+.com-advocacy .form .input-group.required .title:before,
+.com-advocacy .customize .form .input-group.required .title:before,
+.com-advocacy .advocacy-promote .form .input-group.required .title:before {
+    content: "*";
+    color: $color-error;
+    margin-right: 4px;
+}
+
+.com-advocacy .customize .form .input-group.campaign-description .title {
+    margin-bottom: 8px;
+}
+
+.com-advocacy .form .input-group .desc,
+.com-advocacy .form .input-group .hint,
+.com-advocacy .customize .form .input-group .desc,
+.com-advocacy .advocacy-promote .form .input-group .hint,
+.com-advocacy .customize .form .input-group.campaign-description .title:after {
+    color: $color-dark;
+    font-size: 13px;
+    font-weight: 400;
+    padding-left: 2px;
+    margin-bottom: 15px;
+}
+.com-advocacy .customize .form .input-group.campaign-description .desc {
+    margin-top: 5px;
+}
+
+.com-advocacy .form .input-group input,
+.com-advocacy .form .input-group textarea,
+.com-advocacy .customize .form .input-group input,
+.com-advocacy .customize .form .input-group textarea,
+.com-advocacy .advocacy-promote .form .input-group input,
+.com-advocacy .advocacy-promote .form .input-group textarea {
+    @include tpl-input-field();
+}
+.com-advocacy .form .input-group select,
+.com-advocacy .customize .form .input-group select,
+.com-advocacy .advocacy-promote .form .input-group select {
+    @include tpl-input-field-select();
+}
+.com-advocacy .form .input-group textarea,
+.com-advocacy .customize .form .input-group textarea,
+.com-advocacy .advocacy-promote .form .input-group textarea {
+    @include tpl-input-field-textarea();
+    height: 200px;
+}
+.com-advocacy .form .input-group input[type=file],
+.com-advocacy .customize .form .input-group input[type=file],
+.com-advocacy .advocacy-promote .form .input-group input[type=file] {
+    font-size: $font-size;
+    line-height: normal;
+    border: none;
+    height: auto;
+    padding: 2px;
+}
+
+.com-advocacy .form .input-group .errorMsg,
+.com-advocacy .customize .form .input-group .errorMsg,
+.com-advocacy .advocacy-promote .form .input-group .errorMsg {
+    color: $color-error;
+    padding: 8px 4px;
+}
+/* Forms - End */

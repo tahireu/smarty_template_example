@@ -1,0 +1,781 @@
+@import "../../variables";
+
+$bootstrap-button-padding: 0 16px;
+
+$dropdown-items-vertical-padding: 11px;
+$dropdown-items-vertical-padding-smaller: 11px;
+
+/*==========================================================================*/
+/* Bootstrap adjustments - Start ===========================================*/
+/*==========================================================================*/
+
+/* Fields with icons (Select/Dropdown, Search, Date, etc.) */
+.tpl-input-search-holder,
+.input-search-holder,
+.tpl-input-datepicker-holder,
+.input-datepicker-holder,
+.tpl-select-field-holder,
+.select-field-holder,
+.field-holder-error.form-input-holder {
+    @include tpl-field-with-icon-holder();
+    background-color: $color-white;
+}
+.tpl-input-search-holder,
+.input-search-holder {
+    &:after {
+        @include tpl-field-with-icon-holder-after($tpl-fa-icon-search);
+    }
+    .clear:after {
+        @include tpl-field-with-icon-holder-after($tpl-icon-li-x, $font-family-icons-secondary);
+        font-size: 16px;
+        z-index: 2;
+    }
+}
+
+.tpl-input-datepicker-holder:after,
+.input-datepicker-holder:after {
+    @include tpl-field-with-icon-holder-after($tpl-fa-icon-calendar);
+}
+
+.tpl-select-field-holder:after,
+.select-field-holder:after {
+    @include tpl-field-with-icon-holder-after($tpl-fa-icon-arrow-down);
+    //  font-size: 24px;
+}
+
+//.field-holder-error.form-input-holder:after {
+//    @include tpl-field-with-icon-holder-after($tpl-fa-icon-warning, $font-family-icons);
+//    color: $color-error;
+//}
+
+.tpl-input-search-holder .search,
+.tpl-input-search-holder input[type=text],
+.input-search-holder .search,
+.input-search-holder input[type=text],
+.tpl-input-datepicker-holder .datepicker,
+.tpl-input-datepicker-holder input[type=text],
+.input-datepicker-holder .datepicker,
+.input-datepicker-holder input[type=text],
+.tpl-select-field-holder select,
+.select-field-holder select,
+.field-holder-error.form-input-holder input[type=text]{
+    @include tpl-field-with-icon();
+}
+
+
+.tpl-select-field-holder select,
+.select-field-holder select {
+    -webkit-appearance: none;
+    -moz-appearance: none !important;
+}
+
+form .ajax-error,
+.form-error,
+.form-input-error span {
+    color: $color-error;
+}
+
+.form-input-holder .error,
+.form-input-error {
+    font-weight: 300;
+    padding: 3px 0 0 3px;
+}
+
+// Dropdown input field style
+// Dropdown holder
+.ui.selection.dropdown {
+    border: $field-border;
+    min-height: $field-height;
+    line-height:normal;
+    @include border-radius($border-radius);
+    &:focus {
+        border-color: $color-blue;
+    }
+    &.upward.selection,
+    &.active.upward {
+        @include border-radius($border-radius !important)
+    }
+}
+
+// Dropdown Icon
+.ui.selection.dropdown > .dropdown.icon {
+    padding-top: 13px;
+}
+.ui.dropdown > .dropdown.icon:before {
+    content: $tpl-fa-icon-arrow-thick-down;
+    font-family: $font-family-icons;
+}
+
+// Dropdown Text
+.ui.search.dropdown > .text {
+    //padding-top: 3px;
+}
+
+// Dropdown Menu
+.ui.selection.dropdown .menu {
+    @include border-radius(0 0 1px 1px);
+    margin: $field-border-width -#{$field-border-width};
+    min-width: calc(100% + #{2 * $field-border-width});
+    width: calc(100% + #{2 * $field-border-width});
+}
+.ui.selection.dropdown.upward .menu {
+    @include border-radius(1px 1px 0 0);
+}
+
+.ui.selection.active.dropdown .menu {
+    @include box-shadow(none);
+}
+
+.ui.selection.active.dropdown:hover .menu {
+    border: $field-border-width solid $color-blue;
+}
+
+// Active Dropdown Holder and Dropdown Menu
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown .menu {
+    &, &:hover {
+        border: $field-border-width solid $color-highlight;
+    }
+}
+
+// Dropdown Menu Item
+.ui.selection.dropdown .menu > .item,
+.ui.selection.active.dropdown .menu .item {
+    padding-top: $dropdown-items-vertical-padding-smaller !important;
+    padding-bottom: $dropdown-items-vertical-padding-smaller !important;
+    border: none;
+    &:hover {
+        background-color: $color-highlight;
+    }
+}
+
+.ui.dropdown .menu .selected.item {
+    background: darken($color-highlight, 10%);
+    color: #fff;
+    border: none;
+}
+
+
+
+.form-input-holder {
+    margin: 5px 0;
+
+    .combo-options {
+        border-color: $border-color;
+        margin-top: -5px;
+
+        .records .option {
+            padding: $input-field-padding;
+            padding-top: 6px;
+            padding-bottom: 6px;
+
+            &.focused {
+                background-color: $color-highlight;
+            }
+        }
+    }
+}
+
+
+/* Custom checkbox / radio buttons (iCheck) everything else is in custom skin (green) */
+.custom-radio,
+.custom-checkbox {
+    margin-top: -2px;
+}
+.custom-checkbox {
+    @include tpl-checkbox-radio;
+    @include tpl-checkbox;
+
+    &:hover {
+        @include tpl-checkbox-radio-hovered;
+    }
+    &.checked {
+        @include tpl-checkbox-checked;
+    }
+}
+
+
+// Checkbox and Radio
+.c-indicator {
+    @include tpl-checkbox-radio;
+}
+
+// Checkbox
+.c-checkbox {
+    margin-bottom: 0;
+
+    .c-label {
+        @include inline-block;
+        vertical-align: top;
+        margin-top: 4px;
+        margin-left: 4px;
+    }
+
+    .c-indicator {
+        @include tpl-checkbox;
+    }
+    &:hover .c-indicator {
+        @include tpl-checkbox-radio-hovered;
+    }
+
+    & > input:checked ~ .c-indicator {
+        @include tpl-checkbox-checked;
+    }
+}
+
+// Radio
+.c-radio {
+    .c-indicator{
+        @include tpl-radio;
+    }
+    &:hover .c-indicator {
+        @include tpl-checkbox-radio-hovered;
+    }
+
+    & > input:checked ~ .c-indicator {
+        @include tpl-radio-checked;
+    }
+}
+
+
+
+.btn-primary,
+.btn-default {
+    &, &:focus, &.focus, &:active, &.active, &.dropdown-toggle, .open > &, .open > &.dropdown-toggle {
+        @include tpl-button($size: "small");
+        padding: $bootstrap-button-padding;
+
+        &:hover {
+            color: $button-color;
+            //border-color: $color-dark;
+        }
+    }
+}
+.btn-primary.disabled:hover,
+.btn-primary:disabled:hover,
+fieldset[disabled] .btn-primary:hover {
+    @include tpl-button($size: "small");
+    @include tpl-disabled;
+    padding-top: 0;
+}
+a.btn.disaabled,
+fieldset[disabled] a.btn {
+    pointer-events: auto;
+}
+
+.dropdown-toggle {
+    .caret {
+        display: none;
+    }
+    &:after {
+        @include inline-block;
+        font-family: $font-family-icons;
+        content: $tpl-fa-icon-arrow-down;
+        color: $button-color;
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        border: none;
+        vertical-align: middle;
+        margin: -2px 0 0 5px;
+    }
+
+    &:hover {
+        &:after {
+            color: $button-color;
+        }
+    }
+}
+
+.btn-group.open .dropdown-toggle:after {
+    content: $tpl-fa-icon-arrow-up;
+}
+
+.btn-dark,
+.btn-dark:hover,
+.btn-dark:focus {
+    background-color: $color-dark;
+    border-color: $color-dark;
+    color: #fff;
+
+    &.dropdown-toggle:after {
+        color: #fff;
+    }
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset[disabled] .btn {
+    @include tpl-disabled;
+}
+
+// Dropdown menu - holder / popup
+.dropdown-menu {
+    @include box-shadow(none);
+    @include border-radius($border-radius);
+    border-color: $color-gray-d8;
+    min-width: 170px;
+    max-height: 370px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 4px 0;
+}
+
+// Dropdown menu - item
+.dropdown-item,
+.btn-group .dropdown-menu .dropdown-item,
+.ui.dropdown .menu > .item,
+.processes-modules-task-list.default .filter-buttons .filters-wrapper-workflow .dropdown-menu .li a {
+    font-size: 13px;
+    line-height: normal;
+    padding: $dropdown-items-vertical-padding 15px !important; /* !important because of .ui.dropdown .menu > .item */
+}
+.dropdown-item,
+.ui.dropdown .menu > .item,
+.processes-modules-task-list.default .filter-buttons .filters-wrapper-workflow .dropdown-menu .li a {
+    font-weight: 400;
+    color: $color-dark;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        background-color: $color-highlight;
+    }
+}
+
+.custom-dropdown-wrapper {
+    .custom-dropdown-popup {
+        @include border-radius($border-radius);
+        border-color: $color-gray-d8;
+
+        .card-header {
+            .title i.pull-left,
+            .title i.pull-right {
+                line-height: 1.4rem; // fix when it's floated
+            }
+
+            .title i:after {
+                font-family: $font-family-icons;
+                font-size: 0.688rem;
+            }
+
+            .primary-title i:after {
+                content: $tpl-fa-icon-arrow-thick-right;
+                color: $color-gray;
+            }
+
+            .secondary-title {
+                color: $color-light-blue;
+
+                i:after {
+                    content: $tpl-fa-icon-arrow-thick-left;
+                    font-family: $font-family-icons;
+                }
+            }
+        }
+
+        .card-block {
+            .content {
+                .help-text i:after {
+                    content: "\f05a";
+                    font-style: normal;
+                    font-family: $font-family-icons;
+                    margin-right: 0.2rem;
+                }
+
+                &.secondary-content .custom-range.selected,
+                &.secondary-content .custom-range:hover {
+                    background-color: $color-highlight;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &.active {
+        .custom-dropdown-button button {
+            padding: $bootstrap-button-padding;
+        }
+
+        .custom-dropdown-clear-button button {
+            background-color: transparent;
+            border-color: transparent;
+            color: $color-dark;
+            padding-left: 6px;
+            padding-right: 4px;
+
+            i:after {
+                @include tpl-linear-icon($tpl-icon-li-x);
+                font-size: 16px;
+                line-height: normal;
+                margin-top: 2px;
+            }
+        }
+    }
+}
+/*==========================================================================*/
+/* Bootstrap adjustments - End =============================================*/
+/*==========================================================================*/
+
+
+
+$crm-responsive-breakpoint-1: 800px;
+$crm-responsive-breakpoint-2: 600px;
+
+.ss-grid {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+        @include tpl-input-field($size: "small");
+        padding-top: 0;
+        z-index: 1;
+    }
+
+    select {
+        @include tpl-input-field-base-small;
+        background: none;
+        padding-top: 0;
+        padding-right: 30px;
+    }
+
+    .grid-filters {
+        padding: 25px 0 15px;
+
+        .grid-filters-label {
+            color: $color-dark;
+            font-weight: 600;
+
+            a {
+                font-size: 16px;
+                font-weight: 300;
+                color: $color-link;
+                padding: 0 6px;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: none;
+                    color: lighten($color-link, 5%);
+                }
+
+                i {
+                    @include tpl-close-icon($size: 14px, $color: $color-link);
+                    @include inline-block;
+                    vertical-align: middle;
+                    margin: -4px -2px 0 0;
+                }
+            }
+        }
+    }
+
+    .grid-header-holder,
+    .grid-footer-holder {
+        padding-left: 0;
+        padding-right: 0;
+
+        .select-all {
+            margin-top: 3px;
+        }
+
+        .sort-by-holder {
+            label {
+                vertical-align: middle;
+                margin-bottom: 0;
+                margin-top: 1px;
+            }
+            .grid-sort-direction {
+                width: ceil($field-height-small * 1.05);
+                text-align: center;
+                padding: 0;
+
+                i {
+                    &.icon-up:after,
+                    &.icon-down:after {
+                        color: $button-color;
+                        font-family: $font-family-icons;
+                        font-size: 15px;
+                    }
+                    &.icon-up:after {
+                        content: "\f176";
+                    }
+                    &.icon-down:after {
+                        content: "\f175";
+                    }
+                }
+
+                &:hover i:after {
+                    color: $button-color;
+                }
+            }
+        }
+
+        .grid-bulk-action {
+            margin-left: 0;
+        }
+
+        .grid-paging-holder {
+            margin-left: 10px;
+
+            .btn {
+                font-size: 20px;
+                width: $field-height-small;
+                height: $field-height-small;
+                line-height: $field-height-small;
+
+                i {
+                    &:after {
+                        font-family: $font-family-icons;
+                        display: block;
+                    }
+                    &.icon-left:after {
+                        content: "\f104";
+                        margin-left: -2px;
+                    }
+                    &.icon-right:after {
+                        content: "\f105";
+                        margin-right: -2px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .grid-empty-result {
+        border-color: $border-color;
+        margin-left: 0;
+        margin-right: 0;
+
+        h4, h6 {
+            color: $color-gray;
+        }
+    }
+
+
+    .grid-holder {
+        .grid-row {
+            padding-left: $checkbox-radio-size + 6px;
+
+            .grid-col {
+
+                &.grid-col-checkbox {
+                    top: -1px;
+                    //padding-left: 15px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                &.grid-col-toggle .toggle-icon {
+                    font-family: $font-family-icons;
+                    color: $color-gray;
+                    font-size: 14px;
+
+                    &.icon-down:after {
+                        content: $tpl-fa-icon-arrow-thick-down;
+                    }
+                    &.icon-up:after {
+                        content: $tpl-fa-icon-arrow-thick-up;
+                    }
+                }
+
+                &.grid-col-normal {
+                    a {
+                        color: $color-blue;
+
+                        &:hover, &:active {
+                            color: darken($color-blue, 10%);
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &.grid-col-actions {
+                    //padding-right: 15px;
+                    padding-right: 0;
+
+                    .grid-action {
+                        margin: 2px 0;
+                    }
+                }
+
+                .grid-cell-value {
+                    color: $color-dark;
+                }
+                .grid-cell-subtitle {
+                    color: $color-gray;
+                }
+
+                &.pushed-col {
+                    .grid-cell-value,
+                    .grid-cell-subtitle {
+                        background-color: $color-lightest-gray;
+                    }
+
+                    .grid-cell-value {
+                        width: 74%;
+                        font-weight: 600;
+                    }
+                    .grid-cell-subtitle {
+                        width: 26%;
+                        text-align: left;
+                        color: $color-dark;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            &.has-pushed-cols.expanded {
+                background-color: $color-white;
+            }
+
+            &.grid-heading .grid-col .grid-cell-value {
+                color: $color-white;
+            }
+
+
+
+            // Don't hide "Actions" button
+            @media (max-width: 1440px) {
+                padding-right: 8rem;
+
+                .grid-col.grid-col-actions {
+                    display: block;
+                }
+            }
+            @media (max-width: 1024px) {
+                padding-right: 30px;
+
+                .grid-col.pushed-col,
+                &.without-bulk-actions .grid-col.pushed-col {
+                    margin-right: -30px;
+                }
+
+                .grid-col.grid-col-actions {
+                    width: 30px;
+                    padding-left: 0;
+
+                    .grid-action {
+                        width: 100%;
+                        margin-top: 6px;
+
+                        .btn-primary.dropdown-toggle {
+                            width: 100%;
+                            background: none;
+                            padding-left: 0;
+                            padding-right: 0;
+
+                            span {
+                                display: none;
+                            }
+
+                            &:after {
+                                content: "\f142";
+                                color: $color-dark;
+                                margin: 0;
+                            }
+
+                            &:hover {
+                                background: none;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 580px) {
+                &, &.has-pushed-cols {
+                    padding-right: 30px;
+                }
+
+                .grid-col.grid-col-actions {
+                    position: absolute;
+                    top: 0;
+                    padding: 0;
+
+                    .grid-action .dropdown-menu {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        &.show-column-headers .grid-empty-result {
+            margin: $default-content-padding;
+        }
+
+        &.classic-grid .grid-row .grid-col.grid-col-actions i.grid-action.delete:after {
+            color: $color-error;
+            font-family: $font-family-icons;
+            content: "\f057";
+            font-size: 18px;
+        }
+    }
+
+
+    @media (max-width: 620px) {
+        .grid-filters {
+            padding: 15px 0 10px;
+        }
+    }
+}
+
+// Adjust style for checkboxes with labels ("Important" checkbox in Add Note popup)
+.field-group.field-group-checkbox .field-holder-inline {
+    @include inline-block;
+    vertical-align: middle;
+    width: $checkbox-radio-size;
+    height: $checkbox-radio-size;
+    margin: -2px 6px 0;
+}
+
+
+
+.global-react-popup {
+    .close {
+        @include tpl-close-icon("absolute");
+        &:after {
+
+        }
+    }
+
+    .content .form-holder .field-group .field-holder-inline {
+        padding-left: 3px;
+    }
+}
+
+
+.popover .react-popover {
+    .content .actions {
+        padding: 0.875rem;
+
+        .submit {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    .choice-form .choice .c-radio .c-indicator {
+        margin-top: 5px;
+    }
+}
+
+
+.loading-mask {
+    background: rgba(255,255,255,0.7);
+
+    &:after {
+        @include tpl-linear-icon("\e8dd");
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 38px;
+        margin-top: -19px;
+        margin-left: -19px;
+    }
+}

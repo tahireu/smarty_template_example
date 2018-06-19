@@ -1,0 +1,153 @@
+@import "../../variables";
+
+$buttons-size: 30px;
+
+.tpl-architect-child-summary {
+    float: left;
+    width: 25%;
+    max-width: 500px; // width of image
+
+    .tpl-content-holder {
+        margin: $summaries-spacing;
+    }
+
+    .tpl-retain-ratio {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+    }
+
+    .tpl-image-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .tpl-details {
+        .tpl-title {
+            border-bottom: 1px solid $color-gray-d8;
+            height: 34px;
+            line-height: 34px;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            a {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-dark;
+
+                &:after {
+                    font-family: $font-family-icons;
+                    content: "\f0da";
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .tpl-info-holder {
+            height: 32px;
+            line-height: 30px;
+            vertical-align: middle;
+            overflow: hidden;
+
+            .tpl-info {
+                float: left;
+                max-width: 50%;
+                margin: 0 5px;
+
+                i:before {
+                    @include tpl-linear-icon;
+                    font-style: normal;
+                    font-size: 14px;
+                    vertical-align: top;
+                    margin-right: 2px;
+                }
+
+                span {
+                    font-size: 12px;
+                    vertical-align: top;
+                }
+
+                &.tpl-country {
+                    margin-left: 0;
+
+                    i:before {
+                        content: $tpl-lnr-icon-map-marker;
+                    }
+                }
+
+                &.tpl-birthday {
+                    i:before {
+                        content: $tpl-lnr-icon-birthday-cake;
+                        margin-right: 6px;
+                    }
+                }
+
+                &.tpl-gender {
+                    float: right;
+                    margin-right: 0;
+
+                    &.tpl-gender.tpl-gender-male i:before {
+                        content: $tpl-lnr-icon-gender-male;
+                    }
+                    &.tpl-gender.tpl-gender-female i:before {
+                        content: $tpl-lnr-icon-gender-female;
+                    }
+                }
+            }
+        }
+
+        .tpl-buttons {
+            position: relative;
+            padding-right: $buttons-size + 3px;
+
+            .tpl-button {
+                height: $buttons-size;
+                line-height: $buttons-size - 2px;
+                font-size: 12px;
+
+                &.tpl-details-button {
+                    background-color: $color-green;
+                    width: 100%;
+                    padding: 0 4px;
+                }
+
+                &.tpl-download-button {
+                    background-color: $color-dark;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: $buttons-size;
+                    padding: 0;
+
+                    i:after {
+                        @include tpl-linear-icon("\e8f5");
+                        font-style: normal;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $break-tablet) {
+        width: 50%;
+    }
+
+    @media (max-width: 460px) {
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+
+        .tpl-content-holder {
+            margin: 10px 0 20px;
+        }
+    }
+}

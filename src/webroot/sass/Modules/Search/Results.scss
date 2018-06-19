@@ -1,0 +1,301 @@
+@import "../../variables";
+
+.search-modules-results-responsive-view {
+    padding: 0 0 30px;
+
+    .search-modules-results-fields {
+        border: none;
+        background: none;
+        padding: 0;
+        margin-bottom: 50px;
+
+        .form-input-wrapper {
+
+            /* Query, Dropdown and other fields*/
+            .form-input-holder {
+                input[type=text],
+                select {
+                    @include tpl-input-field;
+                    color: $color-gray;
+                    font-size: 16px;
+                }
+
+                /* Search and other buttons */
+                .form-field-button {
+                    @include tpl-button;
+                    border-radius: 0;
+                }
+            }
+
+            /*&.multiselect {
+                input[type=text] {
+                    background: white url("../../../img/drop-down-arrow.png") no-repeat right 12px center !important;
+                    padding-right: 40px;
+                }
+
+                .multiselect-options {
+                    border: $field-border;
+                    border-top: 1px solid $color-light-gray;
+                    padding: 5px 15px;
+                }
+
+                label {
+                    &.checked {
+                        color: $color-blue;
+                    }
+
+                    &.checked:before {
+                        background-color: $color-blue;
+                    }
+                }
+            }*/
+
+
+            /* Query Field */
+            &.query-field {
+
+                .form-input-holder {
+                    padding-right: 125px;
+
+                    .form-field-button.reset {
+                        display: none !important;
+                    }
+
+                    /* search button */
+                    .form-field-button.search {
+                        width: 115px;
+                    }
+
+                    &:after {
+                        @include tpl-field-with-icon-holder-after($tpl-fa-icon-search);
+                        font-size: 15px;
+                        right: auto;
+                        left: 13px;
+                        top: 25px;
+                    }
+
+                    input[type=text] {
+                        padding-left: 34px;
+                    }
+                }
+            }
+        }
+
+        /* Dropdowns */
+        .custom-filters .form-input-wrapper .form-input-holder {
+            //@include tpl-field-with-icon-holder();
+            //background-color: #fff;
+            //border-radius: 4px;
+            //-webkit-border-radius: 4px;
+            &:after {
+                //@include tpl-field-with-icon-holder-after($tpl-fa-icon-dropdown);
+                //right: 16px;
+                //margin-top: -10px;
+                //z-index: 0;
+            }
+            select {
+                //@include tpl-field-with-icon();
+                //background-color: transparent;
+                //z-index: 1;
+                //position: relative;
+            }
+        }
+
+        .custom-filters.multiple .form-input-wrapper:nth-child(2n+1) {
+            padding-right: 5px;
+        }
+        .custom-filters.multiple .form-input-wrapper:nth-child(2n) {
+            padding-left: 5px;
+        }
+
+        .custom-filters.multiple.split-three .form-input-wrapper {
+            width: 33.33%;
+            padding-left: 0;
+            padding-right: 0;
+
+            &.filter-1-field {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+
+        .filters-actions .right-actions .button {
+            @include tpl-link;
+            font-family: $font-family;
+            position: relative;
+            background: transparent;
+            font-weight: 400;
+            font-size: 12px;
+            font-style: normal;
+            padding: 0 20px 0 0;
+
+            &:after {
+                content: $tpl-fa-icon-x-clear;
+                font-family: $font-family-icons;
+                color: $color-black;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                font-size: 16px;
+                height: 18px;
+                line-height: 18px;
+                vertical-align: middle;
+                margin-top: -9px;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &.results-in-columns .search-modules-results-fields {
+        padding: 0 $summaries-spacing;
+    }
+
+
+    &.filters-3-4-5-6-in-1-4-col .search-modules-results-fields .custom-filters.multiple .form-input-wrapper {
+        &.filter-2-field,
+        &.filter-3-field,
+        &.filter-4-field,
+        &.filter-5-field {
+            width: 25%;
+            float: left;
+        }
+
+        &.filter-3-field {
+            padding-right: 5px;
+        }
+        &.filter-4-field {
+            padding-left: 5px;
+        }
+    }
+
+
+    &.no-results .search-modules-results-fields {
+        margin-bottom: 0;
+    }
+
+    .infinite-container {
+        .infinite-item {
+            display: block;
+        }
+
+        &.infinite-loading:after {
+            background: transparent;
+            color: $color-gray;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 40px;
+        }
+
+        .search-modules-results-no-results {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .search-modules-results-responsive-view.filters-3-4-5-6-in-1-4-col .search-modules-results-fields .custom-filters.multiple .form-input-wrapper {
+        &.filter-2-field,
+        &.filter-3-field,
+        &.filter-4-field,
+        &.filter-5-field {
+            width: 50%;
+        }
+
+        &.filter-2-field {
+            padding-right: 5px;
+        }
+        &.filter-3-field {
+            padding-right: 0;
+            padding-left: 5px;
+        }
+        &.filter-4-field {
+            padding-left: 0;
+            padding-right: 5px;
+        }
+        &.filter-5-field {
+            padding-left: 5px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .search-modules-results-responsive-view .search-modules-results-fields {
+        /*.form-input-wrapper {
+
+            !* Query, Dropdown and other fields*!
+            .form-input-holder {
+                input[type=text],
+                select {
+                    //font-size: $field-font-size-small;
+                    //height: $field-height-small;
+                    //line-height: $field-height-small;
+                }
+
+                !* Search and other buttons *!
+                .form-field-button {
+                    //height: $field-height-small;
+                    //padding: $button-padding-small;
+                }
+            }
+
+            !* Query Field *!
+            &.query-field {
+                .form-input-holder {
+                    //padding-right: 95px;
+
+                    !* search button *!
+                    .form-field-button.search {
+                        //width: 85px;
+                    }
+                }
+            }
+        }*/
+
+        /* Dropdowns */
+        .custom-filters.multiple .form-input-wrapper,
+        .custom-filters.multiple .form-input-wrapper:nth-child(2n+1),
+        .custom-filters.multiple .form-input-wrapper:nth-child(2n) {
+            float: none;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .search-modules-results-responsive-view .search-modules-results-fields {
+
+        .form-input-wrapper {
+            /* Query Field */
+            &.query-field {
+                .form-input-holder {
+                    padding-right: 0;
+
+                    /* search button */
+                    .form-field-button.search {
+                        position: static;
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .search-modules-results-responsive-view.filters-3-4-5-6-in-1-4-col .search-modules-results-fields .custom-filters.multiple .form-input-wrapper {
+        &.filter-2-field,
+        &.filter-3-field,
+        &.filter-4-field,
+        &.filter-5-field {
+            float: none;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

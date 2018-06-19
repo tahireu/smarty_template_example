@@ -1,0 +1,141 @@
+@import "../../variables";
+
+.newsletters-modules-newsletter-subscribe {
+    padding: 25px 10px 30px;
+
+    .title {
+        @include tpl-heading(4);
+        color: $color-white;
+        text-align: center;
+        padding-bottom: 22px;
+    }
+
+    .subtitle {
+        display: none;
+    }
+
+    .forms {
+        form {
+            position: relative;
+            padding-right: 100px;
+            @media (max-width: $break-mobile) {
+                padding-right: 0;
+            }
+            .form-input-wrapper {
+                width: 33.33%;
+                float: left;
+                padding: 0;
+                padding-right: 6px;
+
+                @media (max-width: $break-mobile) {
+                    width: 100%;
+                    float: none;
+                    padding-bottom: 5px;
+                }
+
+                .form-input-holder {
+                    height: $field-height-small;
+                    line-height: $field-height-small;
+                    margin: 0;
+
+                    input {
+                        @include tpl-input-field-small(false);
+                        display: block;
+                        background: $color-dark-blue;
+                        color: $color-blue-7e;
+
+                        @include input-placeholder {
+                            color: $color-gray;
+                        }
+
+                        &.has-error {
+                            border: none;
+                            color: $color-white;
+                            background: tpl-alt-color-opacity($color-error);
+                        }
+                    }
+
+                    .form-input-error {
+                        display: block;
+                        line-height: normal;
+                        border: none;
+                        @include border-radius(0);
+                        top: 100%;
+                        left: 0;
+                        font-family: $field-font-family;
+                        font-size: 14px;
+                        padding: $input-field-padding;
+                        padding-top: 3px;
+                        padding-bottom: 3px;
+
+                        span {
+                            color: $color-error;
+                            line-height: 1.2;
+                            margin: 8px 0;
+                        }
+                    }
+                }
+                &.form-disabled,
+                &.form-readonly {
+                    opacity: 0.8;
+                }
+            }
+            .field-group {
+                width: 66.66%;
+                float: left;
+                @media (max-width: $break-mobile) {
+                    width: 100%;
+                    float: none;
+                }
+                .form-input-wrapper {
+                    width: 50%;
+                    @media (max-width: $break-mobile) {
+                        width: 100%;
+                    }
+                }
+            }
+            .form-validation-errors {}
+            .form-actions {
+                position: absolute;
+                top: 0;
+                right: -4px;
+
+                @media (max-width: $break-mobile) {
+                    position: static;
+                    text-align: center;
+                }
+
+                input {
+                    @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green), $size: "small");
+                    display: block;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .confirmation-wrapper {
+        .confirmation {
+            background: none;
+            text-align: center;
+
+            .title,
+            .message {
+                color: inherit;
+            }
+        }
+    }
+
+    @media (max-width: $break-mobile) {
+        .title {
+            font-size: 24px;
+        }
+        .forms form .form-actions {
+            padding-right: 6px;
+            input {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+    }
+}

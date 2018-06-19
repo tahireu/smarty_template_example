@@ -1,0 +1,189 @@
+@import "../../variables";
+
+.advocacy-modules-active-campaigns {
+    padding: $default-content-padding $default-content-padding-sides;
+    font-family: $font-family;
+
+    .title-box {
+        background: none;
+        position: relative;
+        padding: 0;
+
+        .title {
+            @include tpl-heading(6);
+            position: absolute;
+            bottom: 10px;
+            left:0;
+        }
+
+        .link a {
+            display: none;
+            font-size: 16px;
+            line-height: 35px;
+            font-weight: 700;
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .campaigns-table {
+        td {
+            background-color: $color-light-gray;
+            padding: 10px 20px;
+            text-align: left;
+            &.name.icon {
+                padding-left: 15px;
+                padding-right: 0;
+                span {
+                    @include inline-block;
+                    @include border-radius(50%);
+                    background-color: $color-gray-c0;
+                    text-align: center;
+                    min-width: 32px;
+                    height: 32px;
+                    margin-left: 4px;
+                    border: 1px solid $color-gray-c0;
+                    display: table-cell;
+                    vertical-align: middle;
+                    img {
+                        max-width: 24px;
+                        background: none;
+                        padding: 2px;
+                        margin: 0;
+                    }
+                }
+            }
+
+            &.campaign-name {
+                max-width: 415px;
+                span {
+                    font-size: 16px;
+                    font-weight: 700;
+                    display: block;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &.completion {
+                min-width: 250px;
+
+                .progress-bar {
+                    background-color: $color-gray-c0;
+                    height: 6px;
+                    display: block;
+                    width: 100%;
+
+                    .progress-bar-percentage {
+                        background-color: $color-green;
+                        height: 6px;
+                        max-width: 100%;
+                    }
+
+                    .completion-percent,
+                    .total-percent {
+                        bottom: auto;
+                        top: 12px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &.options {
+                padding: 17px 20px;
+                a.view {
+                    @include tpl-button($size:"small");
+                    margin-right: 2px;
+                }
+                a.promote {
+                    @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green), $size:"small");
+                    margin-left: 2px;
+                }
+            }
+
+            &.no-results {
+                font-size: 16px;
+                padding-left: 18px;
+            }
+        }
+
+        tr.even td {
+            background-color: $color-white;
+        }
+        tr.odd td {
+            background-color: $color-light-gray;
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    .advocacy-modules-active-campaigns {
+        .campaigns-table {
+            table, tbody, tr, td {
+                display: block;
+            }
+            colgroup {
+                display: none;
+            }
+
+            tr {
+                position: relative;
+            }
+
+            td.icon {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 60px;
+                text-align: center;
+                @media (max-width:440px) {
+                    display: none;
+                }
+            }
+            td.campaign-name {
+                text-align: center;
+                padding-top: 24px;
+                max-width: unset;
+            }
+            td.completion{
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center;
+                min-width: unset;
+                .progress-bar {
+                    max-width: 250px;
+                    margin: 0 auto;
+                }
+            }
+            td.options {
+                text-align: center;
+            }
+        }
+    }
+}
+@media (max-width: 555px) {
+    .advocacy-modules-active-campaigns .campaigns-table td.name.icon span {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .advocacy-modules-active-campaigns {
+        padding: 0;
+        .title-box {
+            .title,
+            .link {
+                float: none;
+                width: 100%;
+                text-align: left;
+                position: relative;
+            }
+        }
+        .campaigns-table td.completion .progress-bar {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import "../../variables";
+
+.contributions.thank-you {
+    padding: 66px 0 0;
+    margin: 0;
+}
+
+.contributions.thank-you .thanks {
+    max-width: 700px;
+    text-align: center;
+    padding: 10px $default-content-padding-sides;
+    margin: 0 auto;
+}
+
+.contributions.thank-you .thanks img.thanks-icon {
+    display: none;
+}
+
+.contributions.thank-you .thanks .thanks-message {
+    text-align: center;
+}
+.contributions.thank-you .thanks .thanks-message .title {
+    @include tpl-heading(2);
+}
+
+.contributions.thank-you .thanks .thanks-message .content {
+    @include tpl-body;
+    padding: 25px 0 35px;
+    margin: 0;
+}
+
+.contributions.thank-you .separator {
+    display: none;
+}
+
+.contributions.thank-you .thank-you-login {
+    background: $color-lightest-gray;
+    color: tpl-alt-color-opacity($color-black);
+    padding: 40px $default-content-padding-sides 45px;
+}
+.contributions.thank-you .thank-you-login.without-content {
+    display: none;
+}
+.contributions.thank-you .thank-you-login .title {
+    @include tpl-heading(4);
+    padding: 10px 0;
+    margin: 0;
+}
+.contributions.thank-you .thank-you-login .content {
+    @include tpl-body;
+    padding: 8px 0;
+}
+.contributions.thank-you .thank-you-login .password-strength-info {
+    display: none;
+}
+.contributions.thank-you .thank-you-login .form-body {
+    width: 100%;
+    max-width: 550px + 2 * $default-content-padding-sides;
+    padding: 15px $default-content-padding-sides 10px;
+}
+.contributions.thank-you .thank-you-login .form-body .form-input-wrapper {
+    margin: 0 0 10px;
+}
+.contributions.thank-you .thank-you-login .form-body .form-input-label {
+    display: block;
+    font-family: $font-family-secondary;
+    font-weight: 700;
+    color: tpl-alt-color-opacity($color-black);
+    padding: 0 0 5px;
+}
+.contributions.thank-you .thank-you-login .form-body .form-actions {
+    text-align: center;
+    padding: 0;
+}
+.contributions.thank-you .thank-you-login .form-body .form-actions input[type=submit] {
+    @include tpl-button;
+    min-width: 165px;
+}

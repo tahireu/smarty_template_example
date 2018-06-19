@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.tpl-architect-static-video-list {
+    padding: 12px 0;
+
+    .tpl-title {
+        font-size: 18px;
+        font-family: $font-family;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .tpl-body {
+        font-style: italic;
+        padding-top: 6px;
+    }
+}

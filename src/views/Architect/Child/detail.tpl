@@ -1,0 +1,1 @@
+{include file='./detail_shared.tpl' show_gifts=false}

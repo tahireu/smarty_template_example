@@ -1,0 +1,609 @@
+//////////////////////////////////////////////////////////////////////////
+// This file contains everything for the ExtJS theme.
+// In this file you should only modify the variables below.
+// For adding custom html code, see the "ext-js-theme-custom.scss" file.
+// When compiling, use "compass compile ext-js-theme.scss".
+//////////////////////////////////////////////////////////////////////////
+
+
+// Scope the css so it doesn't affect the normal html
+$scope-reset-css: true;
+
+// Unless you want to include all components, you must set $include-default to false
+// IF you set this to true, you can also remove lines 10 to 38 of this file
+$include-default: false;
+
+
+////////////////////////////////////////
+// Insert your custom variables here. //
+////////////////////////////////////////
+
+@import "variables";
+
+
+$base-color: $color;
+
+$form-field-color: $field-color;
+
+$base-border-color : $border-color;
+
+$base-background-color : $color-white;
+$base-background-color-light : $color-lightest-gray;
+$base-background-color-dark : $color;
+
+$base-gradient: none;
+$css-shadow-background-color: transparent;
+$include-shadow-images: false;
+
+$default-border-width: 0;
+$form-field-border-width: $field-border-width;
+
+$header-padding: 10px 0 12px;
+
+@import 'ext4/default/variables'; // necessary as we're using some variables below
+
+// ===============================
+// =========== Focus =============
+// ===============================
+$focus-frame-color: $base-border-color;
+$focus-frame-style: solid;
+$focus-frame-width: 1px;
+
+
+// ===============================
+// =========== Button ============
+// ===============================
+//$button-arrow-size: 15px;
+//$button-split-size: 15px;
+//$button-icon-spacing: 4px;
+
+$button-border-width: 0;
+$button-text-padding: 0;
+
+$button-small-padding-top: 4px;
+$button-small-padding-left: 10px;
+
+$button-small-inner-height: $field-height - ($button-small-padding-top * 2) - ($button-border-width * 2);
+
+$button-medium-padding-top: $button-small-padding-top;
+$button-medium-padding-left: $button-small-padding-left;
+
+$button-large-padding-top: $button-small-padding-left + 6;
+$button-large-padding-left: $button-medium-padding-left + 4;
+
+$button-small-border-radius: $button-border-radius;
+$button-small-border-width: $button-border-width;
+$button-small-padding: $button-small-padding-top $button-small-padding-left;
+$button-small-text-padding: $button-text-padding;
+$button-small-font-size: $font-size;
+$button-small-font-size-over: $button-small-font-size;
+$button-small-font-size-focus: $button-small-font-size;
+$button-small-font-size-pressed: $button-small-font-size;
+$button-small-font-size-disabled: $button-small-font-size;
+$button-small-icon-size: 20px;
+
+$button-medium-border-radius: $button-border-radius;
+$button-medium-border-width: $button-border-width;
+$button-medium-padding: $button-medium-padding-top $button-medium-padding-left;
+$button-medium-text-padding: $button-text-padding;
+$button-medium-font-size: $font-size;
+$button-medium-font-size-over: $button-medium-font-size;
+$button-medium-font-size-focus: $button-medium-font-size;
+$button-medium-font-size-pressed: $button-medium-font-size;
+$button-medium-font-size-disabled: $button-medium-font-size;
+$button-medium-icon-size: $button-small-icon-size;
+
+$button-large-border-radius: $button-border-radius;
+$button-large-border-width: $button-border-width;
+$button-large-padding: $button-large-padding-top $button-large-padding-left;
+$button-large-text-padding: $button-text-padding;
+$button-large-font-size: ceil($font-size * 1.1);
+$button-large-font-size-over: $button-large-font-size;
+$button-large-font-size-focus: $button-large-font-size;
+$button-large-font-size-pressed: $button-large-font-size;
+$button-large-font-size-disabled: $button-large-font-size;
+//$button-large-icon-size: 32px;
+
+//base colors for the default button
+$over-lightness: 1;
+
+$button-default-base-color: $button-color;
+$button-default-base-color-over: $button-default-base-color;
+$button-default-base-color-focus: $button-default-base-color-over;
+$button-default-base-color-pressed: $button-default-base-color-over;
+//$button-default-base-color-disabled: adjust-color($button-default-base-color, $hue: 0deg, $saturation: 0, $lightness: -10%);
+
+$button-default-border-color: $button-background-color;
+$button-default-border-color-over: $button-default-border-color;
+$button-default-border-color-focus: $button-default-border-color-over;
+$button-default-border-color-pressed: $button-default-border-color-over;
+//$button-default-border-color-disabled: adjust-color($button-default-border-color, $hue: 0deg, $saturation: 0, $lightness: -10%);
+
+$button-default-background-color: $button-background-color;
+$button-default-background-color-over: $button-default-border-color;
+$button-default-background-color-focus: $button-default-background-color-over;
+$button-default-background-color-pressed: $button-default-background-color-over;
+//$button-default-background-color-disabled: adjust-color($button-default-background-color, $hue: 0deg, $saturation: 0, $lightness: -10%);
+
+$button-default-background-gradient: $base-gradient;
+$button-default-background-gradient-over: $button-default-background-gradient;
+$button-default-background-gradient-focus: $button-default-background-gradient;
+$button-default-background-gradient-pressed: $button-default-background-gradient;
+$button-default-background-gradient-disabled: $button-default-background-gradient;
+
+$button-default-color: $button-default-base-color;
+$button-default-color-over: $button-default-base-color-over;
+$button-default-color-focus: $button-default-color-over;
+$button-default-color-pressed: $button-default-color-over;
+//$button-default-color-disabled: lighten($button-default-color, 40);
+
+// Toolbar buttons
+
+$button-toolbar-base-color: $base-color; // $button-default-base-color;
+
+$button-toolbar-border-color: transparent; // $base-background-color-light; // $button-default-border-color
+$button-toolbar-border-color-over: $button-toolbar-border-color;
+$button-toolbar-border-color-focus: $button-toolbar-border-color-over;
+$button-toolbar-border-color-pressed: $button-toolbar-border-color;
+$button-toolbar-border-color-disabled: $button-toolbar-border-color;
+
+$button-toolbar-background-color: $button-toolbar-border-color;
+$button-toolbar-background-color-over: $button-toolbar-background-color;
+$button-toolbar-background-color-focus: $button-toolbar-background-color-over;
+$button-toolbar-background-color-pressed: $button-toolbar-background-color;
+$button-toolbar-background-color-disabled: $button-toolbar-border-color-disabled;
+
+$button-toolbar-background-gradient: $base-gradient;
+$button-toolbar-background-gradient-over: $button-toolbar-background-gradient;
+$button-toolbar-background-gradient-focus: $button-toolbar-background-gradient-over;
+$button-toolbar-background-gradient-pressed: $button-toolbar-background-gradient;
+$button-toolbar-background-gradient-disabled: $button-toolbar-background-gradient;
+
+$button-toolbar-color: $button-toolbar-base-color;
+
+$button-toolbar-color-over: $button-toolbar-color;
+$button-toolbar-color-focus: $button-toolbar-color-over;
+$button-toolbar-color-pressed: $button-toolbar-color;
+$button-toolbar-color-disabled: lighten($button-toolbar-color, 40);
+
+
+
+// ===============================
+// ======== Btn Group ============
+// ===============================
+$btn-group-background-color: $button-default-background-color;
+$btn-group-margin: 5px 0;
+$btn-group-border-color: $button-default-border-color;
+$btn-group-border-radius: $button-border-radius;
+$btn-group-border-width: $button-border-width;
+$btn-group-padding: 0 3px;
+
+$btn-group-inner-border-width: $button-border-width;
+$btn-group-inner-border-color: $button-default-border-color;
+
+$btn-group-header-margin: 2px 0;
+$btn-group-header-font: normal $font-size $font-family;
+$btn-group-header-color: $color;
+$btn-group-header-padding: 5px;
+$btn-group-header-background-color: transparent;
+
+
+// ===============================
+// =========== Panel =============
+// ===============================
+$panel-border-radius: $border-radius;
+$panel-border: none;
+$panel-border-width: 0;
+$panel-base-color: $color;
+$panel-border-color: $base-border-color;
+
+$panel-body-background-color: transparent;
+$panel-body-color: $color;
+$panel-body-border: none;
+$panel-body-border-width: 0;
+$panel-body-border-color: transparent;
+$panel-body-font-size: $font-size;
+
+$tool-size: $font-size;
+
+$panel-header-border-width: 0;
+$panel-header-inner-border: false;
+$panel-header-inner-border-width: 0;
+
+//padding
+$panel-header-padding: $header-padding;
+
+//font
+//$panel-header-font-size: $font-size-h5;
+//$panel-header-line-height: normal;
+//$panel-header-font-weight: 700;
+
+//icon
+//$panel-header-icon-width: 16px !default;
+//$panel-header-icon-height: 16px !default;
+
+//background
+$panel-header-background-gradient: $base-gradient;
+
+// UI defaults
+$panel-header-border-color: $panel-border-color;
+$panel-header-inner-border-color: $panel-border-color;
+$panel-header-color: $panel-base-color;
+$panel-header-background-color: $base-background-color;
+
+// FRAMED Panel
+
+//border
+$panel-frame-border-radius: $border-radius;
+$panel-frame-border-width: $default-border-width;
+$panel-frame-padding: $default-border-width;
+
+// UI defaults
+$panel-frame-background-color: $base-background-color;
+$panel-frame-border-color: $panel-border-color;
+
+// ===============================
+// =========== Form ==============
+// ===============================
+$form-field-height: $field-height;
+
+$form-toolbar-field-height: $form-field-height;
+
+$form-error-icon-width: 22px;
+
+//padding
+$form-field-padding: 10px 14px;
+
+//fonts
+//$form-field-font-family: sans-serif;
+
+$form-field-color: $form-field-color;
+
+$form-field-empty-color: lighten($color, 30);
+
+//border
+$form-field-border-color: $base-border-color;
+$form-field-border-width: $form-field-border-width;
+$form-field-focus-border-color: $form-field-border-color;
+
+//background
+$form-field-background-color: $color-white;
+$form-field-background-image: '../img/extjs/blank.gif';
+
+// error
+$form-field-invalid-border-color: lighten($color-error, 10);
+$form-field-invalid-background-color: $form-field-background-color;
+$form-field-invalid-background-image: '../img/extjs/blank.gif';
+//$form-field-invalid-background-repeat: repeat-x;
+//$form-field-invalid-background-position: bottom;
+
+//textarea
+$form-textarea-padding: $form-field-padding;
+
+
+$form-checkbox-image: '../img/extjs/custom-checkbox-24x48.png';
+$form-checkbox-size: 25px;
+
+$form-radio-image: '../img/extjs/custom-radio-24x48.png';
+$form-radio-size: 24px;
+
+// Error messages
+//icons
+$form-exclamation-icon: '../img/extjs/custom-error.png';
+
+//font
+$form-error-msg-color: $color-error;
+$form-error-msg-font-size: ceil($font-size * .9);
+$form-error-msg-line-height: normal;
+
+$form-trigger-width: 30px;
+$form-trigger-height: $form-field-height;
+
+$form-trigger-border-bottom-width: 0;
+$form-trigger-border-bottom-style: none;
+$form-trigger-border-bottom-color: transparent;
+$form-trigger-border-bottom: none;
+
+$form-trigger-border-bottom-color-over: $form-trigger-border-bottom-color;
+$form-trigger-border-bottom-color-focus: $form-trigger-border-bottom-color;
+$form-trigger-border-bottom-color-focus-over: $form-trigger-border-bottom-color;
+$form-trigger-border-bottom-color-pressed: $form-trigger-border-bottom-color;
+
+// $form-trigger-icon-background-position: 50% 50%; // only when all icons are replaced
+
+$trigger-width: $form-trigger-width;
+$trigger-height: $form-trigger-height;
+$trigger-background-repeat: no-repeat;
+$trigger-background-color: transparent;
+$trigger-background-position: 10% 50%;
+$trigger-border-width: 0px;
+
+$fieldset-header-font-size: $font-size;
+$fieldset-header-font-weight: normal;
+$fieldset-header-line-height: normal;
+$fieldset-header-color: $color;
+
+$fieldset-border-width: $default-border-width;
+
+//$fieldset-padding: 10px;
+$fieldset-header-padding: $header-padding;
+
+// slider
+//$horizontal-slider-thumb-width: 14px;
+//$horizontal-slider-thumb-height: 15px;
+//$vertical-slider-thumb-width: 15px;
+//$vertical-slider-thumb-height: 14px;
+
+
+// ===============================
+// ============ Grid =============
+// ===============================
+$grid-base-color: $base-color;
+
+// header
+$grid-header-background-gradient: $base-gradient;
+$grid-header-over-border-color: $grid-header-border-color;
+$grid-header-background-color: $color-blue;
+$grid-header-over-background-color: $grid-header-background-color;
+$grid-header-over-background-gradient: $grid-header-background-gradient;
+$grid-header-border-color: lighten($grid-header-background-color, 5);
+$grid-header-line-height: 30px;
+$grid-header-padding: 7px 18px 6px;
+$grid-header-trigger-height: 28px;
+$grid-header-trigger-width: 14px;
+$grid-header-color: $color-white;
+
+// rows
+$grid-row-height: 48px;
+$grid-row-cell-font-size: $font-size;
+$grid-row-cell-line-height: $grid-row-cell-font-size + 4;
+
+//row body
+$grid-row-body-font: normal $grid-row-cell-font-size/$grid-row-cell-line-height $font-family;
+$grid-row-body-padding: 4px 16px;
+
+//row cell
+$grid-row-cell-background: $color-white;
+
+//row cell alt
+$grid-row-cell-alt-background: $color-lightest-gray;
+
+//row cell over
+$grid-row-cell-over-background-color: darken($grid-row-cell-alt-background, 3);
+$grid-row-cell-over-border-color: $grid-row-cell-over-background-color;
+
+//row cell selected
+$grid-row-cell-selected-background-color: darken($grid-row-cell-alt-background, 5);
+$grid-row-cell-selected-border-color: $grid-row-cell-selected-background-color;
+
+//row cell focus
+$grid-row-cell-focus-background-color: darken($grid-row-cell-selected-background-color, 2);
+$grid-row-cell-focus-border-color: $grid-row-cell-focus-background-color;
+
+//standard cells
+
+// ===============================
+// =========== Pickers ===========
+// ===============================
+// color picker
+$colorpicker-item-border-color: $base-border-color;
+$colorpicker-over-border-color: lighten($colorpicker-item-border-color, 30);
+$colorpicker-over-background-color: $base-background-color;
+
+// date picker
+$datepicker-base-color: $base-color;
+
+$datepicker-border-color: $base-border-color;
+$datepicker-background-color: $base-background-color;
+
+
+$datepicker-header-background-color: $base-background-color;
+
+$datepicker-th-color: lighten($base-color, 10);
+$datepicker-th-font-size: ceil($font-size * .8);
+// $datepicker-th-text-align: center;
+
+//$datepicker-td-height: 19px;
+
+//item
+$datepicker-item-color: $color;
+$datepicker-item-border-color: $base-border-color;
+
+$datepicker-item-hover-background-color: darken($datepicker-base-color, 5);
+
+$datepicker-today-item-border-color: darken($color-error, 10);
+
+$datepicker-selected-item-border-color: $datepicker-border-color;
+$datepicker-selected-item-background-color: $base-background-color-light;
+
+$datepicker-monthpicker-color: $base-color;
+
+$datepicker-monthpicker-height: auto;
+
+$datepicker-monthpicker-item-color: $datepicker-item-color;
+$datepicker-monthpicker-item-border: $datepicker-item-border-color;
+
+$datepicker-monthpicker-item-selected-background-color: $base-background-color-light;
+$datepicker-monthpicker-item-selected-border: $datepicker-monthpicker-item-selected-background-color;
+
+// ===============================
+// =========== qTip =============
+// ===============================
+//text
+$tip-body-color : $base-color;
+
+//borders
+$tip-border-width: 1px;
+$tip-border-radius: $border-radius;
+
+//error tips
+$tip-error-inner-border-color: $border-color;
+$tip-error-border-color: $border-color;
+$tip-error-border-radius: $border-radius;
+$tip-error-border-width: 1px;
+$tip-error-background-color: $base-background-color;
+
+
+// ===============================
+// =========== Window ============
+// ===============================
+$window-border-radius: ceil($border-radius * 2);
+$window-border-width: $default-border-width;
+$window-border-color: $base-border-color;
+
+$window-body-border-width: 0;
+$window-body-border-color: $base-border-color;
+$window-body-background-color: $base-background-color;
+$window-body-color: $base-color;
+
+$window-header-padding: 13px 20px 12px;
+$window-header-font-size: 18px;
+$window-header-line-height: normal;
+$window-header-color: $window-body-color;
+
+
+// ===============================
+// ======= Drop down list ========
+// ===============================
+//background
+$boundlist-background-color: $base-background-color;
+
+//borders
+$boundlist-border-color: $base-border-color;
+$boundlist-border-width: $default-border-width;
+
+$boundlist-item-padding: 4px 6px;
+$boundlist-item-border-width: 1px 0;
+$boundlist-item-border-style: solid;
+
+$boundlist-item-over-border-color: $boundlist-border-color;
+$boundlist-item-selected-border-color: darken($boundlist-item-over-border-color, 10);
+
+$boundlist-item-over-background-color: $base-background-color-light;
+$boundlist-item-selected-background-color: darken($boundlist-item-over-background-color, 5);
+
+
+// ===============================
+// ========== Loading ============
+// ===============================
+$loadmask-msg-padding: 3px;
+$loadmask-msg-border-color: $base-border-color;
+$loadmask-msg-background-color: $base-background-color-light;
+
+$loadmask-msg-inner-padding: 8px 12px 8px 33px;
+$loadmask-msg-inner-icon: '../img/ajax-loader.gif';
+$loadmask-msg-inner-border-color: $loadmask-msg-border-color;
+$loadmask-msg-inner-background-color: $loadmask-msg-background-color;
+$loadmask-msg-inner-color: $color;
+$loadmask-msg-inner-font-size: ceil($font-size * .9) !default;
+
+// ===============================
+// =========== Layout ============
+// ===============================
+$border-layout-ct-background: $base-background-color;
+
+$accordion-header-color: $color;
+$accordion-header-background-color: $base-background-color;
+$accordion-header-background-gradient: $base-gradient;
+
+
+////////////////////////////////////////////////////////////
+// Import the theme - you should not edit below this line //
+////////////////////////////////////////////////////////////
+
+@import 'ext4/default/all';
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@if $scope-reset-css {
+  .#{$prefix}reset {
+    @if $include-default {
+      // includes are done automatically in all.scss
+    }
+    @else {
+      @include extjs-boundlist;
+      @include extjs-button;
+      //@include extjs-btn-group;
+      @include extjs-datepicker;
+      @include extjs-colorpicker;
+      @include extjs-menu;
+      @include extjs-grid;
+      @include extjs-form;
+      @include extjs-form-field;
+      @include extjs-form-fieldset;
+      @include extjs-form-file;
+      @include extjs-form-checkboxfield;
+      @include extjs-form-checkboxgroup;
+      @include extjs-form-triggerfield;
+      @include extjs-form-htmleditor;
+      @include extjs-panel;
+      @include extjs-qtip;
+      @include extjs-slider;
+      @include extjs-progress;
+      @include extjs-toolbar;
+      @include extjs-window;
+      @include extjs-messagebox;
+      @include extjs-tabbar;
+      @include extjs-tab;
+      @include extjs-tree;
+      @include extjs-drawcomponent;
+      @include extjs-viewport;
+    }
+  }
+}
+@else {
+  @if $include-default {
+    // includes are done automatically in all.scss
+  }
+  @else {
+    @include extjs-boundlist;
+    @include extjs-button;
+    @include extjs-btn-group;
+    @include extjs-datepicker;
+    @include extjs-colorpicker;
+    @include extjs-menu;
+    @include extjs-grid;
+    @include extjs-form;
+    @include extjs-form-field;
+    @include extjs-form-fieldset;
+    @include extjs-form-file;
+    @include extjs-form-checkboxfield;
+    @include extjs-form-checkboxgroup;
+    @include extjs-form-triggerfield;
+    @include extjs-form-htmleditor;
+    @include extjs-panel;
+    @include extjs-qtip;
+    @include extjs-slider;
+    @include extjs-progress;
+    @include extjs-toolbar;
+    @include extjs-window;
+    @include extjs-messagebox;
+    @include extjs-tabbar;
+    @include extjs-tab;
+    @include extjs-tree;
+    @include extjs-drawcomponent;
+    @include extjs-viewport;
+  }
+}
+
+// This line changes the location of your images when creating UIs to be relative instead of within the ExtJS directory.
+// You MUST set this to true/string value if you are creating new UIs + supporting legacy browsers.
+// This only applies to new UIs. It does not apply to default component images (i.e. when changing $base-color)
+// The value can either be true, in which case the image path will be "../images/"
+// or a string, of where the path is
+$relative-image-path-for-uis: true; // defaults to "../images/" when true
+
+////////////////////////////
+// Import the custom html //
+////////////////////////////
+
+@import 'parts/all';
+
+@if $scope-reset-css {
+  .#{$prefix}reset {
+    @include main-custom;
+  }
+}
+@else {
+  @include main-custom;
+}

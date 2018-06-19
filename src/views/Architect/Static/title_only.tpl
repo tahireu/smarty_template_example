@@ -1,0 +1,1 @@
+<div class="tpl-architect-static-title-only {$viewClass}">{$title}</div> 

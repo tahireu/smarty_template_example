@@ -1,0 +1,242 @@
+@import "../../variables";
+
+$checkbox_width: 40px;
+$image_size: 100px;
+$image_size_small: 70px;
+
+.tpl-architect-child-detail-shared.gifts .tpl-main-holder {
+
+    .tpl-gifts {
+        text-align: left;
+        padding-right: 11px;
+
+        .tpl-gift-items {
+            background: $color-white;
+            padding: 40px 0;
+        }
+
+        .tpl-gift-item {
+            position: relative;
+            padding-left: $checkbox_width;
+            margin: $default-content-padding 0;
+
+            .tpl-checkbox-holder {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                height: $checkbox-radio-size;
+                line-height: $checkbox-radio-size;
+                vertical-align: middle;
+
+                .tpl-custom-checkbox {
+                    line-height: normal;
+                }
+            }
+
+            .tpl-gift-image-holder {
+                position: absolute;
+                left: $checkbox_width;
+                top: 0;
+                width: $image_size + $default-content-padding;
+                padding-right: 20px;
+            }
+
+            .tpl-gift-item-content {
+                .tpl-gift-item-top {
+                    position: relative;
+                    font-size: 26px;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 7px;
+                        width: 100%;
+                        border-bottom: 2px dotted $color-dark;
+                        z-index: 1;
+                    }
+
+                    .tpl-gift-item-title,
+                    .tpl-gift-item-amount {
+                        position: relative;
+                        z-index: 2;
+                        background: $color-white;
+                    }
+
+                    .tpl-gift-item-title {
+                        float: left;
+                        padding-right: 6px;
+                    }
+                    .tpl-gift-item-amount {
+                        float: right;
+                        padding-left: 6px;
+                    }
+                }
+
+                .tpl-gift-item-description {
+                    padding-top: 8px;
+                    padding-right: 50px;
+                }
+            }
+
+            &.tpl-image-yes {
+                min-height: $image_size;
+                padding-left: $checkbox_width + $image_size + $default-content-padding;
+
+                .tpl-checkbox-holder {
+                    top: $image_size/2;
+                    margin-top: -$checkbox-radio-size/2;
+                }
+            }
+
+            &.tpl-min-cash-value-yes .tpl-gift-item-content .tpl-gift-item-top .tpl-gift-item-amount {
+                .tpl-currency {
+                    vertical-align: middle;
+                }
+
+                input[type=text] {
+                    width: 50px;
+                    height: 32px;
+                    line-height: 32px;
+                    vertical-align: top;
+                    font-size: 26px;
+                    padding: 0 2px;
+
+                    &.has-error {
+                        background-color: lighten($color-error, 40%);
+                    }
+                }
+            }
+
+            &.tpl-max-multi-item-yes .tpl-gift-item-content .tpl-multi-field-holder {
+                text-align: right;
+                padding-top: 8px;
+                padding-bottom: 20px;
+
+                select {
+                    width: 56px;
+                    height: 34px;
+                    line-height: 34px;
+                    font-size: 22px;
+                    background-size: 16px;
+                    background-position: center right 6px;
+                    padding: 0 24px 0 2px;
+                }
+            }
+        }
+
+        .tpl-invalid-item {
+            padding: 10px 0;
+        }
+
+
+        .tpl-gifts-total {
+            text-align: right;
+        }
+
+        .tpl-add-to-cart-holder {
+            text-align: right;
+            padding: 30px 0 0;
+
+            .tpl-button {
+                @include tpl-button($color-green, tpl-alt-color-opacity($color-green));
+            }
+        }
+    }
+
+    .tpl-give-message {
+        padding: 50px 0;
+    }
+
+    @media (max-width: 600px) {
+        .tpl-gifts {
+            .tpl-gift-item {
+                .tpl-checkbox-holder {
+                    top: 2px;
+                }
+
+                .tpl-gift-image-holder {
+                    width: $image_size_small + $default-content-padding;
+                }
+
+                .tpl-gift-item-content {
+                    .tpl-gift-item-top {
+                        position: relative;
+                        font-size: 22px;
+
+                        &:before {
+                            bottom: 6px;
+                        }
+                    }
+
+                    .tpl-gift-item-description {
+                        padding-right: 0;
+                    }
+                }
+
+                &.tpl-image-yes {
+                    min-height: $image_size_small;
+                    padding-left: $checkbox_width + $image_size_small + $default-content-padding;
+
+                    .tpl-checkbox-holder {
+                        top: $image_size_small/2;
+                    }
+                }
+
+                &.tpl-min-cash-value-yes .tpl-gift-item-content .tpl-gift-item-top .tpl-gift-item-amount input[type=text] {
+                    width: 42px;
+                    height: 28px;
+                    line-height: 28px;
+                    font-size: 22px;
+                }
+            }
+
+            .tpl-gifts-total {
+                font-size: 26px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .tpl-gifts {
+            padding-right: 0;
+
+            .tpl-gift-item {
+                padding-left: 0;
+                margin: 30px 0;
+
+                .tpl-checkbox-holder {
+                    position: static;
+                    text-align: center;
+                }
+
+                .tpl-gift-image-holder {
+                    position: static;
+                    width: 100%;
+                    max-width: $image_size;
+                    padding-right: 0;
+                    margin: 0 auto;
+                    padding-top: 14px;
+                }
+
+                .tpl-gift-item-content {
+                    padding-top: 14px;
+                }
+
+                &.tpl-image-yes {
+                    padding-left: 0;
+
+                    .tpl-checkbox-holder {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .tpl-gifts-total,
+            .tpl-add-to-cart-holder {
+                text-align: center;
+            }
+        }
+    }
+}

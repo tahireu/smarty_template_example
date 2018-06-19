@@ -1,0 +1,1977 @@
+@import "compass/css3";
+@import "variables";
+
+/* Global styles */
+html, body {
+	background-color: $color-white;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body * {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+    color: $color-dark;
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+a {
+	@include tpl-link;
+}
+
+a img {
+	border: none;
+	outline: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+.tpl-image-no .tpl-image-holder {
+    @include inline-block;
+    position: relative;
+    background-color: $color-lightest-gray;
+
+    img {
+        @include opacity(0);
+    }
+
+    &:after {
+        font-family: $font-family-icons;
+        content: "\f03e";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        color: $color-gray;
+        width: 60px;
+        height: 60px;
+        font-size: 60px;
+        line-height: 1;
+        margin: -30px 0 0 -30px;
+    }
+}
+
+.tpl-background-image {
+    background-color: $color-light-blue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.tpl-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    .tpl-cell {
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	font-size: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+
+
+/* Remove default styling on mobile */
+button,
+textarea,
+input:not([type="radio"]):not([type="checkbox"]) {
+    -webkit-appearance: none;
+}
+
+/* Firefox fix */
+input::-moz-focus-inner,
+select::-moz-focus-inner,
+textarea::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=numeric],
+input[type=card],
+input[type=phone],
+input[type=file],
+select,
+textarea {
+    @include tpl-input-field();
+}
+
+select,
+.form-input-wrapper.multiselect input[type="text"] {
+    @include tpl-input-field-select;
+}
+
+textarea {
+    @include tpl-input-field-textarea;
+}
+
+
+// Headings H1-H6
+@for $i from 1 through 6 {
+    h#{$i},
+    .tpl-h#{$i},
+    .tpl-child-title-h#{$i} .tpl-title {
+        @include tpl-heading($i);
+    }
+}
+
+
+.tpl-text-align-center {
+    text-align: center;
+}
+
+
+.tpl-background-color-orange {
+    background-color: $color-orange;
+}
+
+.tpl-background-color-gold {
+    background-color: $color-gold;
+}
+
+.tpl-background-color-teal {
+    background-color: $color-teal;
+}
+
+.tpl-background-color-blue {
+    background-color: $color-blue;
+}
+
+.tpl-background-color-sky-blue {
+    background-color: $color-sky-blue;
+}
+
+.tpl-background-color-light-blue {
+    background-color: $color-light-blue;
+}
+
+.tpl-background-color-purple {
+    background-color: $color-purple;
+}
+
+.tpl-background-color-taupe {
+    background-color: $color-taupe;
+}
+
+.tpl-background-color-green {
+    background-color: $color-green;
+}
+
+.tpl-background-color-light-taupe {
+    background-color: $color-light-taupe;
+}
+
+.tpl-background-color-red {
+    background-color: $color-red;
+}
+
+.tpl-background-color-aqua {
+    background-color: $color-aqua;
+}
+
+.tpl-background-color-light-aqua {
+    background-color: $color-light-aqua;
+}
+
+.tpl-background-color-dark {
+    background-color: $color-dark;
+}
+
+.tpl-background-color-gray {
+    background-color: $color-gray;
+}
+
+.tpl-background-color-light-gray {
+    background-color: $color-light-gray;
+}
+
+.tpl-background-color-light-gray-yellow {
+    background-color: $color-light-gray-yellow;
+}
+
+.tpl-background-color-sand {
+    background-color: $color-sand;
+}
+
+
+
+.tpl-button,
+a.tpl-button,
+.appointee-button,
+button,
+button.edit,
+button.submit,
+button.reset,
+.ui-widget button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    @include tpl-button;
+
+    &.mfp-close {
+        background-color: transparent;
+        &:hover {
+            border-color: inherit;
+            background-color: inherit;
+            .alternate-style & {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.tpl-button-small,
+button.tpl-button-small,
+a.tpl-button-small,
+input[type="button"].tpl-button-small,
+input[type="submit"].tpl-button-small,
+input[type="reset"].tpl-button-small {
+    @include tpl-button-small;
+}
+
+//.tpl-button-white,
+//a.tpl-button-white {
+//	border: 2px solid $color-charcoal;
+//	color: $color-charcoal;
+//	padding: 1px 8px;
+//}
+
+.tpl-button.disabled,
+.appointee-button.disabled,
+button.disabled,
+button.edit.disabled,
+input[type=button].disabled,
+input[type=submit].disabled,
+input[type=reset].disabled,
+.tpl-button:disabled,
+.appointee-button:disabled,
+button:disabled,
+button.edit:disabled,
+input[type=button]:disabled,
+input[type=submit]:disabled,
+input[type=reset]:disabled {
+    @include tpl-disabled;
+}
+
+
+.tpl-child-button-outline .tpl-button {
+    @include tpl-button-outline();
+}
+
+.tpl-child-button-size-small .tpl-button {
+    @include tpl-button-base-small;
+}
+.tpl-child-button-size-small.tpl-child-button-outline .tpl-button {
+    @include tpl-button-base-small();
+}
+
+
+
+.tpl-custom-checkbox {
+    input[type=checkbox] {
+        @include tpl-checkbox-radio-field;
+    }
+
+    label {
+        @include tpl-checkbox-radio-label(0);
+
+        &:before {
+            @include tpl-checkbox-radio($position: "absolute-vertical");
+            @include tpl-checkbox;
+        }
+    }
+
+    &.checked label {
+        @include tpl-checkbox-checked("icon");
+    }
+}
+
+
+
+.form-input-holder .combo-options {
+    border-color: $border-color;
+
+    .records .option.focused {
+        background-color: $color-green;
+        color: $color-white;
+    }
+}
+
+// tpl-date is used by Story Summary and Detail view
+.tpl-date {
+    font-size: 12px;
+    font-family: $font-family;
+}
+
+/*==========================================================================*/
+/* Global Hero style - Start  ==============================================*/
+/*==========================================================================*/
+.tpl-hero {
+    position: relative;
+    overflow: hidden;
+    @extend .tpl-background-image;
+
+    .tpl-hero-content {
+        position: relative;
+        z-index: 4;
+    }
+
+    .tpl-video-player-holder {
+        @include tpl-full-spread;
+        overflow: hidden; // to cut out video
+        z-index: 1; // has lowest z-index so all other content would show above
+    }
+
+    // Hero height
+    .tpl-hero-content,
+    .tpl-video-player {
+        height: $hero-height;
+    }
+
+    // Bigger hero height
+    &.tpl-hero-larger {
+        .tpl-hero-content,
+        .tpl-video-player {
+            height: $hero-height-big;
+        }
+    }
+
+    // Specific style for Hero in Story Detail view
+    .tpl-architect-story-detail & {
+        .tpl-title {
+            color: $color-white;
+        }
+    }
+}
+/*==========================================================================*/
+/* Global Hero style - End  ================================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Global giving form - Start  =============================================*/
+/*==========================================================================*/
+.tpl-elements-giving-form {
+    .tpl-input-field-and-button {
+        position: relative;
+    }
+
+    .tpl-field {
+        float: left;
+        width: 100%;
+        position: relative;
+        padding-right: $tpl-simple-form-button-width - $field-border-width;
+
+        &:before,
+        &:after {
+            @include tpl-input-field-placeholder;
+            position: absolute;
+            top: 50%;
+            font-size: $field-font-size;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            margin-top: -10px;
+        }
+        &:before {
+            left: 17px;
+            content: "$";
+        }
+        &:after {
+            content: "USD";
+            right: $tpl-simple-form-button-width + 14px;
+        }
+
+        input[name=amount] {
+            background-color: $color-white;
+            padding-left: 30px;
+            padding-right: 55px;
+        }
+    }
+
+    .tpl-amount-button-holder {
+        @include inline-block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .tpl-amount-submit {
+            @include tpl-button($color-dark-blue, true);
+            @include inline-block;
+            width: $tpl-simple-form-button-width;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    }
+
+
+    &.tpl-elements-giving-form-small {
+        .tpl-field {
+            padding-right: $tpl-simple-form-button-width-small - $field-border-width;
+
+            &:before {
+                left: 14px;
+                font-size: 16px;
+                margin-top: -10px;
+            }
+
+            &:after {
+                display: none;
+            }
+
+            input[name=amount] {
+                height: $field-height-small;
+                font-size: 16px;
+                padding-right: 10px;
+                padding-left: 25px;
+            }
+        }
+
+        .tpl-amount-button-holder .tpl-amount-submit {
+            @include tpl-button-base-small;
+            width: $tpl-simple-form-button-width-small;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    }
+
+
+    &.tpl-show-radio-options {
+        .tpl-radio-buttons {
+            padding-bottom: 10px;
+        }
+        .tpl-radio-holder {
+            margin: 10px 0;
+
+            input[type=radio] {
+                @include tpl-checkbox-radio-field;
+            }
+
+            label {
+                @include tpl-checkbox-radio-label;
+                cursor: pointer;
+
+                span {
+                    @include inline-block;
+                    vertical-align: top;
+                    margin-top: -2px;
+                }
+
+                &:before {
+                    @include tpl-checkbox-radio($position: "absolute-vertical");
+                    @include tpl-radio;
+                }
+            }
+
+            &.checked label {
+                @include tpl-radio-checked("left");
+
+                &:after {
+                    background: $color-green;
+                }
+            }
+        }
+
+        .tpl-input-field-and-button {
+            max-width: 300px;
+        }
+
+        .tpl-field {
+            padding-right: 110px - $field-border-width;
+
+
+            input[name=amount] {
+                border: $field-border;
+            }
+        }
+
+        .tpl-amount-button-holder .tpl-amount-submit {
+            @include tpl-button-base-small;
+            background: $color-green;
+            width: 110px;
+            padding-left: 2px;
+            padding-right: 2px;
+
+            &:hover {
+                background: lighten($color-green, 5%);
+            }
+        }
+    }
+}
+
+/*==========================================================================*/
+/* Global giving form - End  ===============================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Global giving details - Start  ==========================================*/
+/*==========================================================================*/
+
+.tpl-funding-wrapper,
+.tpl-architect-project-featured {
+    .tpl-funding-info {
+        .tpl-value {
+            display: block;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .tpl-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        &.tpl-raised-amount,
+        &.tpl-needed {
+            margin-top: 35px;
+            margin-bottom: 17px;
+        }
+    }
+    .tpl-funding-title {
+        .tpl-funding-donated {
+            font-size: 20px;
+        }
+        label {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .tpl-funding-total {
+            display: none;
+        }
+    }
+
+    .tpl-funding-progress-wrapper {
+        .tpl-funding-progress {
+            @include border-radius(1px);
+            background-color: $color-gray-cc;
+
+            .tpl-funding-progress-level {
+                @include border-left-radius(1px);
+                max-width: 100% !important;
+                height: 10px;
+                background-color: $color-green;
+            }
+        }
+
+        .tpl-funding-percentage-wrapper {
+            padding-top: 5px;
+
+            span span {
+                @include inline-block;
+            }
+            span.tpl-funding-percentage {
+                float: left;
+                text-align: right;
+                max-width: 100% !important;
+
+                span {
+                    width: 30px;
+                    text-align: center;
+                    margin-right: -15px;
+                }
+            }
+            span.tpl-funding-percentage-total {
+                float: right;
+            }
+        }
+    }
+
+    // Percentage >= 80
+    &.tpl-funding-almost-complete .tpl-funding-progress-wrapper {
+        .tpl-funding-progress .tpl-funding-progress-level {
+            @include border-right-radius(1px);
+        }
+
+        .tpl-funding-percentage-wrapper {
+            span.tpl-funding-percentage span {
+                text-align: right;
+                margin-right: 0;
+            }
+            span.tpl-funding-percentage-total {
+                display: none;
+            }
+        }
+    }
+}
+
+/*==========================================================================*/
+/* Global giving details - End  ============================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Global Tags - Start =====================================================*/
+/*==========================================================================*/
+.tpl-elements-get-tags {
+    font-size: 16px;
+    display: inline-block;
+
+    .tpl-label {
+        font-family: $font-family;
+        font-weight: 700;
+        color: $color-dark;
+    }
+
+    .tpl-tag,
+    .tpl-sep {
+        font-family: $font-family;
+        font-weight: 700;
+    }
+
+    a.tpl-tag,
+    a.tpl-sep {
+        color: $color-blue;
+    }
+
+    /*&.tpl-tag-categories-yes {
+        .tpl-all-tags-label {
+            display: none;
+        }
+
+        .tpl-tag-category {
+            display: block;
+
+            .tpl-sep-tag-cat {
+                display: none;
+            }
+        }
+    }*/
+}
+/*==========================================================================*/
+/* Global Tags - End =======================================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* jQuery UI adjustments - Start ===========================================*/
+/*==========================================================================*/
+
+.ui-datepicker {
+    width: 220px;
+    box-shadow: 0 0 5px $border-color;
+
+    .ui-datepicker-header {
+        background: $color-black;
+        font-size: 20px;
+    }
+
+    .ui-datepicker-title {
+        line-height: normal;
+
+        select {
+            height: auto;
+            line-height: normal;
+            font-weight: 400;
+            border-color: $color-black;
+            background: $color-black;
+            color: $color-white;
+            padding: 4px 3px 3px;
+            margin: 2px 0;
+        }
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-prev.ui-state-hover,
+    .ui-datepicker-next.ui-state-hover {
+        background: none;
+        border: none;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th {
+        font-weight: 400;
+    }
+
+    td {
+        background: $color-white;
+        border: 1px solid $border-color;
+
+        span,
+        a {
+            font-family: $font-family;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: normal;
+            text-shadow: none;
+            padding: 5px 0 6px;
+
+            &.ui-state-hover {
+                background: $color-blue;
+                color: $color-white;
+            }
+        }
+
+        &.ui-datepicker-current-day {
+            span,
+            a {
+                @include box-shadow(none);
+                text-shadow: none;
+                background: $color-blue;
+                font-weight: 400;
+            }
+
+
+        }
+
+        &.ui-datepicker-week-end {
+            span,
+            a {
+                color: $color-red;
+                text-shadow: none;
+
+                &.ui-state-hover {
+                    background: $color-blue;
+                    color: $color-white;
+                }
+            }
+        }
+
+        &.ui-datepicker-today {
+            span,
+            a {
+                font-weight: normal;
+                text-shadow: none;
+            }
+        }
+    }
+
+    .ui-datepicker-buttonpane button {
+        @include tpl-button($size: "small-auto");
+        margin: 0 0 5px;
+    }
+}
+
+/*==========================================================================*/
+/* jQuery UI adjustments - End =============================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Global giving form - Start  =============================================*/
+/*==========================================================================*/
+/*$giving-form-button-size-small: 100px;*/
+
+.tpl-elements-giving-form {
+    position: relative;
+
+    .tpl-field {
+        float: left;
+        width: 100%;
+        position: relative;
+        padding-right: $tpl-simple-form-button-width;
+
+        &:before,
+        &:after {
+            @include tpl-input-field-placeholder;
+            font-size: $field-font-size;
+            position: absolute;
+            top: 50%;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            z-index: 1;
+            margin-top: -11px;
+        }
+        &:before {
+            left: 17px;
+            content: "$";
+        }
+        &:after {
+            content: "Amount";
+                right: $tpl-simple-form-button-width + 20px;
+        }
+
+        .tpl-amount-field-holder {
+            background-color: $color-white;
+        }
+
+        input[name=amount] {
+            @include tpl-input-field(false);
+            position: relative;
+            z-index: 2;
+            background: none;
+            padding-left: 30px;
+            padding-right: 90px;
+        }
+    }
+
+    .tpl-amount-button-holder {
+        @include inline-block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .tpl-amount-submit {
+            @include tpl-button();
+            @include inline-block;
+            width: $tpl-simple-form-button-width;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    }
+}
+
+/*==========================================================================*/
+/* Global giving form - End  ===============================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Global Summary (Project, Ministry, Story) - Start  ======================*/
+/*==========================================================================*/
+
+.tpl-architect-summary {
+    margin-bottom: 30px;
+
+    .tpl-content-holder {
+        border: 1px solid $color-medium-gray;
+        background-color: $color-white;
+        position: relative;
+        padding: 12px;
+        min-height: 205px;
+
+
+        .tpl-giving-form .tpl-read-more {
+            @include tpl-button();
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .tpl-read-more-after-summary {
+            display: block;
+            margin: 10px 0;
+        }
+
+        h6 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .tpl-summary-left {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            img {
+                width: 100%;
+                max-width: 180px;
+            }
+        }
+
+        .tpl-summary-right {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            width: 200px;
+
+            .tpl-field {
+                float:none;
+                padding: 0;
+
+                input {
+                    border: $field-border;
+                }
+            }
+
+            input.tpl-button-give {
+                @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green));
+                float: none;
+                margin-top: 5px;
+                width: 100%;
+            }
+
+            // Some views (Opportunity so far), has buttons
+            .tpl-buttons-holder {
+                padding-top: 25px;
+
+                .tpl-button {
+                    width: 100%;
+                }
+
+                .tpl-second-button {
+                    @include tpl-button($color-green, tpl-alt-color-opacity($color-green));
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .tpl-summary-center {
+            padding-left: 200px;
+            padding-right: 220px;
+            padding-top: 7px;
+            .tpl-subtitle-holder {
+                padding-bottom: 10px;
+            }
+        }
+
+        .tpl-elements-giving-form {
+            .tpl-amount-button-holder {
+                display: block;
+                position: relative;
+                margin-top: 5px;
+                .tpl-button.tpl-amount-submit {
+                    @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green));
+                    width: 100%;
+                }
+            }
+            .tpl-field::after {
+                right: 15px;
+            }
+        }
+    }
+
+    &.no-image {
+        .tpl-content-holder .tpl-summary-center {
+            padding-left: 0;
+        }
+    }
+
+
+    .tpl-architect-story-summary & {
+        .tpl-content-holder {
+            .tpl-summary-left img {
+                max-width: 260px;
+            }
+            .tpl-summary-center {
+                padding-left: 280px;
+                padding-right: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .tpl-content-holder {
+            .tpl-summary-left {
+                position: static;
+                top: auto;
+                left: auto;
+                margin-bottom: 10px;
+                text-align: center;
+
+                img {
+                    max-width: 325px;
+                }
+            }
+
+            .tpl-summary-right {
+                position: static;
+                top: auto;
+                right: auto;
+                width: unset;
+                max-width: 353px;
+                margin: 0 auto 20px;
+            }
+
+            .tpl-summary-center {
+                padding: 0;
+                text-align: center;
+            }
+            .tpl-body {
+                padding-bottom: 20px;
+            }
+        }
+
+        .tpl-architect-story-summary & {
+            .tpl-content-holder .tpl-summary-center {
+                padding: 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+/*==========================================================================*/
+/* Global Summary (Project, Ministry, Story) - End  ========================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Global Detail View (Project, Ministry, Story, Child) - Start ============*/
+/*==========================================================================*/
+$detail-image-width: 35%;
+    $detail-image-width-small: 29%;
+
+.tpl-architect-detail {
+    .tpl-top-section {
+        background-color: $color-blue;
+        padding: 20px;
+
+        .tpl-title {
+            color: $color-white;
+            padding: 0 20px 0 $detail-image-width;
+            margin: 23px 0;
+            float: left;
+            width: 100%;
+            line-height: 1.1;
+            background: none;
+            text-align: left;
+        }
+    }
+
+    .tpl-main-section {
+        padding: 30px 0 65px;
+
+        .tpl-image-and-buttons-holder {
+            width: $detail-image-width;
+            margin-top: -125px;
+            padding-right: 40px;
+            float: left;
+            .tpl-image-holder {
+                padding: 20px 0 10px;
+                img {
+                    border: 2px solid $color-white;
+                }
+            }
+            .tpl-buttons {
+                display: block;
+                .tpl-button {
+                    @include tpl-button();
+                    width: 100%;
+                }
+            }
+            .tpl-elements-giving-form {
+                margin: 0 auto 10px;
+
+                .tpl-field input[name=amount] {
+                    border: 1px solid $color-gray;
+                }
+                .tpl-amount-button-holder .tpl-amount-submit {
+                    @include tpl-button($color:$color-green, $hover-color:tpl-alt-color-opacity($color-green));
+                }
+            }
+            .tpl-buttons .tpl-button,
+            .tpl-elements-giving-form {
+                max-width: 353px;
+            }
+        }
+
+        .tpl-main-holder {
+            width: 100 - $detail-image-width;
+            float: right;
+            .tpl-details {
+                padding: 7px 0;
+                .tpl-elements-get-tags {
+                    display: inline;
+                }
+            }
+
+            .tpl-list-details {
+                padding-top: 15px;
+            }
+            .tpl-list-detail {
+                font-size: ceil($font-size * 1.1);
+                margin: 5px 0;
+
+                .tpl-elements-get-tags {
+                    font-size: inherit;
+
+                    .tpl-label,
+                    .tpl-tag,
+                    .tpl-sep {
+                        font-weight: inherit;
+                        font-size: inherit;
+                    }
+                }
+            }
+
+            .tpl-body {
+                color: $color-dark;
+                padding: 20px 0;
+                line-height: 24px;
+            }
+            .tpl-video-holder {
+                margin-top: 15px;
+                iframe {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    // If item is without image
+    &.tpl-image-no {
+        .tpl-top-section {
+            .tpl-title {
+                padding: 0 20px 0 0;
+                text-align: center;
+            }
+        }
+        .tpl-main-section {
+            .tpl-image-and-buttons-holder {
+                margin-top: 0;
+            }
+        }
+    }
+
+    // Style for Child content type
+    .tpl-architect-child-detail-shared & {
+        .tpl-top-section .tpl-top-section-inner {
+            padding-left: $detail-image-width-small;
+            .tpl-title-holder {
+                .tpl-before-title {
+                    color: $color-white;
+                    font-weight: 700;
+                    width: auto;
+                    text-align: left;
+                    padding-bottom: 5px;
+                }
+                .tpl-title {
+                    margin: 0;
+                    width: auto;
+                    padding-left: 0;
+                    padding-right: 10px;
+                }
+            }
+
+            .tpl-sponsorship-amount-and-text-holder {
+                color: $color-white;
+                font-weight: 700;
+                text-align: right;
+                padding: 10px 20px;
+                line-height: 25px;
+                display: table-cell;
+                vertical-align: middle;
+                .tpl-sponsorship-text {
+                    min-width: 190px;
+                }
+                .tpl-sponsorship-amount {
+                    display: inline;
+                    font-size: 24px;
+                }
+            }
+
+            .tpl-top-button-holder {
+                // Giving Form
+                .tpl-field {
+                    &:after,
+                    &:before {
+                        display: none;
+                    }
+                }
+                .tpl-amount-button-holder {
+                    position: relative;
+                    width: 100%;
+                    .tpl-amount-submit {
+                        @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green), $size: "small");
+                        margin-bottom: 5px;
+                        width: 100%;
+                    }
+                }
+
+                // Download Info button
+                .tpl-button.tpl-button-download-info {
+                    @include tpl-button($color: $color-dark, $hover-color: tpl-alt-color-opacity($color-dark), $size: "small");
+                    line-height: 36px;
+                    &:before {
+                        @include tpl-linear-icon();
+                        content: $tpl-lnr-icon-download;
+                        color: white;
+                        padding-right: 5px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .tpl-main-section {
+            .tpl-image-and-buttons-holder {
+                width: $detail-image-width-small;
+                .tpl-image-holder {
+                    padding: 5px 0 10px;
+                }
+            }
+            .tpl-centered-1000 .tpl-main-holder {
+                width: 100 - $detail-image-width-small;
+                .tpl-details .tpl-info,
+                .tpl-details .tpl-child-info {
+                    padding: 0 10px 0 0;
+                    display: inline;
+                    i:before {
+                        @include tpl-linear-icon;
+                        margin-right: 2px;
+                    }
+                    &.tpl-country {
+                        i:before {
+                            content: $tpl-lnr-icon-map-marker;
+                        }
+                    }
+                    &.tpl-birthday {
+                        i:before {
+                            content: $tpl-lnr-icon-birthday-cake;
+                            margin-right: 6px;
+                        }
+                    }
+                    &.tpl-gender {
+                        &.tpl-gender.tpl-gender-male i:before {
+                            content: $tpl-lnr-icon-gender-male;
+                        }
+                        &.tpl-gender.tpl-gender-female i:before {
+                            content: $tpl-lnr-icon-gender-female;
+                        }
+                    }
+                }
+
+                .tpl-custom-give {
+                    padding: 20px 0;
+                }
+
+                .tpl-content,
+                .tpl-child-content {
+                    padding-top: 5px;
+                    h6 {
+                        @include tpl-heading(6);
+                        padding-top: 20px;
+                        display: block;
+                    }
+                    .tpl-body {
+                        padding-top: 15px;
+                    }
+                }
+            }
+        }
+
+        // If Child item is without image
+        &.tpl-image-no {
+            .tpl-top-section .tpl-top-section-inner {
+                padding-left: 0;
+            }
+            .tpl-main-section {
+                .tpl-main-holder {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // Style for Child content type - Detail view without give at the top
+    .tpl-architect-child-detail-shared.no-give-at-top & {
+        .tpl-top-section {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+
+    // Global responsiveness
+    @media (max-width: 850px) {
+        .tpl-top-section {
+            padding: 13px 0;
+            .tpl-title {
+                float: none;
+                width: 100%;
+                text-align: center;
+                padding: 0;
+            }
+        }
+
+        .tpl-main-section {
+            text-align: center;
+            padding: 30px 0 35px;
+            .tpl-centered-1000 {
+                .tpl-image-and-buttons-holder {
+                    margin-top: unset;
+                    float: none;
+                    width: 100%;
+                    padding-right: 0;
+                    .tpl-image-holder {
+                        padding: 20px 0;
+                        img {
+                            max-width: 280px;
+                        }
+                    }
+                }
+                .tpl-main-holder {
+                    float: none;
+                    width: 100%;
+                    padding-left: 0;
+                    ul li {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        &.tpl-image-yes .tpl-main-section .tpl-centered-1000 .tpl-image-and-buttons-holder {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    // Responsiveness for Child content type
+    .tpl-architect-child-detail-shared & {
+        @media (max-width: 850px) {
+            .tpl-top-section .tpl-top-section-inner .tpl-title-holder .tpl-title {
+                text-align: left;
+            }
+
+            .tpl-elements-giving-form.tpl-show-radio-options .tpl-input-field-and-button {
+                margin: 0 auto;
+            }
+
+            &.tpl-image-yes {
+                .tpl-top-section {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    .tpl-top-section-inner {
+                        padding-left: 0;
+                        .tpl-title-holder {
+                            padding-left: 0;
+                        }
+                        .tpl-sponsorship-amount-and-text-holder {
+                            line-height: 20px;
+                            padding: 10px;
+                            .tpl-sponsorship-text {
+                                min-width: 140px;
+                                font-size: 14px;
+                            }
+                            .tpl-sponsorship-amount {
+                                display: inline;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                .tpl-main-section {
+                    .tpl-main-holder {
+                        width: 100%;
+                        padding: 0;
+                    }
+                }
+            }
+            &.tpl-image-no .tpl-main-section .tpl-main-holder {
+                padding: 0;
+            }
+        }
+        @media (max-width: 700px) {
+            .tpl-top-section .tpl-top-section-inner {
+                .tpl-title-holder {
+                    display: block;
+                    padding: 10px 0;
+                    max-width: 100%;
+                    width: 100%;
+                    .tpl-title,
+                    .tpl-before-title {
+                        text-align: center;
+                    }
+                    .tpl-title {
+                        padding-right: 0;
+                        font-size: 32px;
+                    }
+                }
+                .tpl-sponsorship-amount-and-text-holder {
+                    text-align: center;
+                    display: block;
+                }
+                .tpl-top-button-holder {
+                    display: block;
+                    max-width: 300px;
+                    margin: 0 auto;
+                    .tpl-button {
+                        width: 100%;
+                    }
+                }
+            }
+            .tpl-main-section {
+                .tpl-centered-1000 .tpl-main-holder .tpl-details .tpl-info,
+                .tpl-centered-1000 .tpl-main-holder .tpl-details .tpl-child-info {
+                    display: block;
+                    padding: 5px 10px;
+                }
+                .tpl-centered-1000 .tpl-image-and-buttons-holder .tpl-image-holder {
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}
+/*==========================================================================*/
+/* Global Detail View (Ministry, Projects, Story, Child) - End =============*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Advocacy Details View - Start ===========================================*/
+/*==========================================================================*/
+.tpl-advocacy-details {
+    padding: 40px 0;
+
+    .tpl-image-holder {
+        float: right;
+        width: 48%;
+        max-width: 600px;
+        padding: 0 0 10px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+    .tpl-body {
+        float: left;
+        width: 52%;
+        padding-right: 50px;
+        line-height: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tpl-advocacy-details {
+        text-align: center;
+        padding: 30px 0;
+
+        .tpl-image-holder,
+        .tpl-body {
+            float: none;
+            width: 100%;
+            padding: 0;
+            margin: 5px auto 20px;
+        }
+    }
+}
+/*==========================================================================*/
+/* Advocacy Details View - End =============================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Advocacy Review View - Start ============================================*/
+/*==========================================================================*/
+
+.tpl-advocacy-review {
+    .tpl-advocacy-page-title,
+    .tpl-advocacy-page-footer {
+        padding: 15px 0;
+
+        .tpl-advocacy-action-button {
+            @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green));
+            float: right;
+            margin: 5px 0;
+        }
+    }
+    .tpl-advocacy-page-footer {
+        text-align: right;
+    }
+
+    .tpl-advocacy-page-title {
+        h2 {
+            float: left;
+            width: 60%;
+            line-height: 1.1;
+            margin: 10px 0;
+            a {
+                @include tpl-heading(2);
+                color: $color-black;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .tpl-campaign-details {
+        padding: 30px 0;
+
+        .tpl-image-holder {
+            float: left;
+            width: 50%;
+            padding: 0;
+            margin: 20px 0;
+
+            img {
+                max-width: 100%;
+            }
+        }
+        .tpl-content-holder {
+            float: left;
+            width: 50%;
+            padding-left: 20px;
+            margin: 15px 0;
+            line-height: 26px;
+
+            .tpl-body {
+                padding-right: 15px;
+            }
+            .tpl-funding-wrapper {
+                margin: 48px 0 10px;
+                .tpl-funding-total {
+                    float: right;
+                }
+            }
+        }
+    }
+
+    .tpl-advocacy-page-footer {
+        a.tpl-advocacy-go-back-button {
+            @include tpl-button($color: $color-blue, $hover-color: tpl-alt-color-opacity($color-blue));
+            margin: 6px 15px;
+            padding: 0 25px;
+        }
+        a.tpl-advocacy-action-button {
+            @include tpl-button($color: $color-green, $hover-color: tpl-alt-color-opacity($color-green));
+            margin: 6px 0;
+            float: right;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .tpl-advocacy-review {
+        text-align: center;
+
+        // Title and button
+        .tpl-advocacy-page-title {
+            width: 100%;
+            h3,
+            .tpl-advocacy-action-button {
+                float: none;
+                margin: 10px auto;
+            }
+            h3 {
+                width: 100%;
+            }
+        }
+
+        // Details and image
+        .tpl-campaign-details {
+            max-width: 600px;
+            padding: 20px 0;
+            margin: 0 auto;
+
+            .tpl-image-holder,
+            .tpl-content-holder {
+                float: none;
+                width: 100%;
+                padding: 0;
+            }
+
+            .tpl-content-holder {
+                .tpl-body {
+                    padding-right: 0;
+                }
+                .tpl-funding-wrapper {
+                    text-align: left;
+                }
+            }
+        }
+
+        // Footer
+        .tpl-advocacy-page-footer {
+            text-align: center;
+
+            a.tpl-advocacy-action-button {
+                float: none;
+                margin: 10px auto;
+            }
+            a.tpl-advocacy-go-back-button {
+                float: none;
+            }
+        }
+    }
+}
+/*==========================================================================*/
+/* Advocacy Review View - End ==============================================*/
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* Custom Alert - Start ====================================================*/
+/*==========================================================================*/
+.customAlert {
+    min-width: 510px;
+    border: 1px solid $color-medium-gray;
+    font-family: $font-family-secondary;
+    @include border-bottom-radius($border-radius);
+}
+
+.customAlert .customAlertLoading,
+.customAlert .customAlertLoading img {
+    @include border-radius($border-radius);
+}
+
+.customAlert .customAlertInner {
+    font-family: $font-family-secondary;
+    padding-bottom: 20px;
+}
+
+.customAlert .customAlertInner .customAlertTitle {
+    position: relative;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: $font-family-secondary;
+    color: #FFF;
+    background: $color-blue;
+    padding: 20px 50px 20px 25px;
+    margin: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+}
+
+$close-alert-size: 22px;
+.customAlert .customAlertInner .customAlertTitle a.closeAlert {
+    background: transparent;
+    font-weight: 400;
+    @include border-radius(2px);
+    position: absolute;
+    width: $close-alert-size;
+    height: $close-alert-size;
+    top: 50%;
+    right: 20px;
+    margin-top: -($close-alert-size/2);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.customAlert .customAlertInner .customAlertTitle a.closeAlert:after {
+    display: block;
+    text-align: center;
+    font-family: $font-family-icons;
+    content: $tpl-fa-icon-x;
+    color: #fff;
+    font-size: 14px;
+    line-height: $close-alert-size;
+}
+
+.customAlert .customAlertInner .customAlertMsg {
+    font-family: $font-family;
+    position: relative;
+    padding: 25px;
+}
+
+.customAlert .customAlertMsg a {
+    color: $color-link;
+}
+
+.customAlert .customAlertInner .customAlertMsg img {
+    display: none;
+}
+
+.customAlert .customAlertInner .customAlertMsg .confirmationIcon {
+    background: none;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.customAlert .customAlertInner .customAlertMsg .confirmationIcon:after {
+    font-family: $font-family-icons;
+    content: "\f00c";
+    font-size: 98px;
+    height: 70px;
+    line-height: 68px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -35px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .confirmationTitle {
+    //  color: #FFF;
+    //  font-size: 20px;
+    //  margin-bottom: 5px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .confirmationText {
+    //  color: #FFF;
+    //  font-size: 16px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .confirmationText span {
+    //  display: block;
+    //  font-weight: normal;
+    //  padding-top: 10px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .title {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .required {
+    //  background: url('../img/icon-required.png') no-repeat center center;
+    background: none;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .required:after {
+    content: "*";
+}
+
+.customAlert .customAlertInner .customAlertMsg span {
+    vertical-align: middle;
+}
+
+.customAlert .customAlertInner .customAlertMsg input,
+.customAlert .customAlertInner .customAlertMsg textarea,
+.customAlert .customAlertInner .customAlertMsg select {
+    margin: 5px 0 10px;
+}
+
+.customAlert .customAlertInner .customAlertMsg textarea {
+    height: 108px;
+}
+
+.customAlert .customAlertInner .customAlertMsg input.last-row,
+.customAlert .customAlertInner .customAlertMsg textarea.last-row,
+.customAlert .customAlertInner .customAlertMsg select.last-row {
+    margin-bottom: 0;
+}
+
+.customAlert .customAlertInner .customAlertMsg input.invalid,
+.customAlert .customAlertInner .customAlertMsg textarea.invalid,
+.customAlert .customAlertInner .customAlertMsg select.invalid {
+    border-color: $color-error;
+}
+
+.customAlert .customAlertInner .customAlertMsg input.readonly,
+.customAlert .customAlertInner .customAlertMsg textarea.readonly,
+.customAlert .customAlertInner .customAlertMsg select.readonly,
+.customAlert .customAlertInner .customAlertMsg input.readonly:focus,
+.customAlert .customAlertInner .customAlertMsg textarea.readonly:focus,
+.customAlert .customAlertInner .customAlertMsg select.readonly:focus {
+    background-color: #fff;
+    border-color: #fff;
+    color: $color-gray;
+}
+
+.customAlert .customAlertInner .customAlertMsg input[name="email"] {
+    margin-bottom: 15px;
+}
+
+.customAlert .customAlertInner .customAlertMsg textarea.last-row {
+    resize: vertical;
+}
+
+.customAlert .customAlertInner .customAlertMsg .radio-wrapper {
+    width: 70px !important;
+    vertical-align: top !important;
+    padding: 3px 0;
+    margin-bottom: 5px;
+}
+
+/* Custom radio */
+.customAlert .customAlertInner .customAlertMsg .radio-wrapper input[type=radio] {
+    display: none;
+}
+
+.customAlert .customAlertInner .customAlertMsg .radio-wrapper label:before {
+    content: " ";
+    @include inline-block;
+    width: 24px;
+    height: 24px;
+    @include border-radius(50%);
+    background: #fff;
+    border: 2px solid #EFE7E1;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -4px;
+}
+
+.customAlert .customAlertInner .customAlertMsg .radio-wrapper label.checked:before {
+    font-family: $font-family-icons;
+    content: "\f111";
+    color: $color-green;
+    background: #fff;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.customAlert .customAlertInner .customAlertError {
+    display: block;
+    color: $color-error;
+    padding-bottom: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.customAlert .customAlertInner .pop-up-buttons {
+    margin: 20px 0 0;
+}
+
+.customAlert .customAlertInner .pop-up-buttons a {
+    @include tpl-button($color-green, $color-green);
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: $button-padding;
+    margin: 7px 0 0;
+}
+
+.customAlert .customAlertInner .customAlertButtons,
+.customAlert .customAlertInner .customAlertButtons.right {
+    text-align: left;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.customAlert button,
+.customAlert .customAlertInner .customAlertButtons button {
+    @include tpl-button($color-green, $color-green);
+    margin: 3px 5px;
+}
+
+/* New Campaign popup */
+.customAlert.newCampaignOptions {
+    min-width: 410px;
+}
+
+.customAlert.newCampaignOptions .customAlertInner .customAlertMsg {
+    color: $color-light-gray;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.customAlert.newCampaignOptions .customAlertInner .customAlertMsg .description {
+    padding: 8px 0;
+}
+
+/* Audio player popup */
+.customAlert.custom-alert-audio-player .customAlertInner {
+    padding-bottom: 0;
+}
+
+// Advocacy Donate Popup
+.customAlert.advocacy-donate-popup-custom-alert .customAlertInner {
+    .customAlertMsg {
+        padding: 20px 25px 10px;
+        font-weight: 700;
+        textarea,
+        input[type=text] {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .amount-holder img {
+            display: none;
+        }
+        .anonymous-label {
+            display: table-cell;
+        }
+        .radio-wrapper {
+            margin-left: 10px;
+            width: 65px !important;
+            padding: 15px 0 0;
+            font-weight: 300;
+            label {
+                font-weight: 700;
+            }
+            label:before {
+                border: 1px solid $color-gray;
+            }
+            label.checked:before {
+                color: $color-green;
+            }
+        }
+        .advocacy-donate-popup {
+            padding: 5px 15px 0;
+            .logged-in-info-holder {
+                height: 30px;
+                b {
+                    font-weight: 300;
+                    padding-left: 20px;
+                    color: $color-gray;
+                }
+            }
+
+            .field-holder {
+                padding: 10px 0;
+                position: relative;
+                &.anonymous-holder {
+                    display: table;
+                }
+                .field-label {
+                    position: absolute;
+                    top: 5px;
+                }
+            }
+        }
+    }
+    .customAlertButtons {
+        text-align: left;
+        padding: 0 25px 10px;
+        .customAlertButtonOk {
+            margin: 0 15px;
+        }
+        button {
+            @include tpl-button($color-green, $color-green);
+        }
+    }
+}
+
+/* Responsive - Custom Alert */
+@media (max-width: 520px) {
+    .customAlert,
+    .customAlert.newCampaignOptions {
+        min-width: 0;
+    }
+
+    .customAlert.advocacy-donate-popup-custom-alert {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .customAlert.advocacy-donate-popup-custom-alert .customAlertInner .customAlertMsg {
+        padding: 0;
+    }
+
+    .customAlert .customAlertInner {
+        padding-bottom: 10px;
+    }
+
+    .customAlert .customAlertInner .customAlertTitle {
+        font-size: 18px;
+        padding: 10px 40px 10px 15px;
+    }
+
+    .customAlert .customAlertInner .customAlertTitle a.closeAlert {
+        right: 10px;
+    }
+
+    .customAlert .customAlertInner .customAlertMsg {
+        padding: 15px;
+    }
+
+    .customAlert .customAlertInner .customAlertButtons,
+    .customAlert .customAlertInner .customAlertButtons.right {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .customAlert.custom-alert-audio-player {
+        width: 300px !important;
+        left: 50% !important;
+        margin-left: -150px;
+    }
+}
+/*==========================================================================*/
+/* Custom Alert - End ======================================================*/
+/*==========================================================================*/

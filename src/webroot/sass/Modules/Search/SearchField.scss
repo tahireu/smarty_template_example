@@ -1,0 +1,121 @@
+@import "../../variables";
+
+.search-modules-search-field {
+    padding: 0;
+
+    .search-input {
+        background: transparent;
+
+        input[type=text] {
+            @include tpl-input-field($size: small);
+        }
+
+        .search-icon,
+        .reset-search-icon {
+            display: none !important;
+        }
+    }
+
+    input.submit-search {
+        height: auto;
+        line-height: normal;
+        font-size: $font-size;
+        background: none;
+        color: $color-black;
+        padding: 0;
+        //@include box-shadow(none);
+    }
+
+    /*// When published in the "Top Bar" positions
+    .tpl-section-top-bar & {
+        position: relative;
+        float: left;
+        padding: 10px 30px 0 10px;
+
+        .search-input {
+            input[type=text] {
+                width: 175px;
+                height: 25px;
+                border: none;
+                font-size: 12px;
+                padding: 2px 10px;
+            }
+
+            &:before {
+                font-size: 12px;
+                color: $color-white;
+                content: "SEARCH";
+                vertical-align: middle;
+                padding: 2px 10px 0 0;
+            }
+
+            &:after {
+                font-size: 14px;
+                color: $color-white;
+                font-family: $font-family-icons;
+                content: "\f002";
+                vertical-align: middle;
+                margin-left: 5px;
+            }
+        }
+        input.submit-search {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 20px;
+            text-indent: -9999px;
+        }
+    }*/
+
+    // When published in Side Flyout position
+    .tpl-position-flyout & {
+        border-bottom: 1px solid $color-medium-gray;
+        padding: 18px;
+
+        .search-input {
+            @include tpl-field-with-icon-holder;
+            max-width: 190px;
+
+            input[type=text] {
+                @include tpl-field-with-icon;
+            }
+
+            &:after {
+                @include tpl-field-with-icon-holder-after($tpl-fa-icon-search);
+            }
+        }
+
+        input.submit-search {
+            display: none;
+        }
+    }
+
+
+/*
+    // When published in Body position
+    .tpl-position-body & {
+        .search-input {
+            float: left;
+            width: 80%;
+
+            input[type=text] {
+                @include border-radius($border-radius 0 0 $border-radius);
+                border-right: 0;
+            }
+        }
+        .submit-search {
+            @include tpl-button;
+            float: left;
+            width: 20%;
+            margin: 0;
+            padding: 0 5px;
+            @include border-radius(0 $border-radius $border-radius 0);
+        }
+    }
+
+    @media (max-width: $break-tablet) {
+        .tpl-section-top-bar & {
+            display: none;
+        }
+    }*/
+}

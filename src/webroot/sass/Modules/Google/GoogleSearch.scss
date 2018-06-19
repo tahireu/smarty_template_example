@@ -1,0 +1,189 @@
+@import "../../variables";
+
+.google-modules-google-search {
+    padding: 10px 0 30px;
+
+    form.custom-search-form {
+        position: relative;
+        @include border-radius($border-radius);
+        background: transparent;
+        padding: 5px 15px;
+        margin: 30px 0;
+    }
+
+    form.custom-search-form .search-input-wrapper {
+        position: relative;
+        padding-right: 135px;
+        margin: 10px 0;
+    }
+    form.custom-search-form .search-input-wrapper:before {
+        position: absolute;
+        font-family: $font-family-icons;
+        font-size: 21px;
+        content: $tpl-fa-icon-search;
+        color: $border-color;
+        text-align: center;
+        width: 22px;
+        height: 22px;
+        background: none;
+        left: 15px;
+        top: 50%;
+        margin-top: -11px;
+    }
+    form.custom-search-form .search-input-wrapper input {
+        @include tpl-input-field;
+        width: 100%;
+        font-style: normal;
+        padding-left: 50px;
+        background-image: none;
+    }
+
+    form.custom-search-form .search-button {
+        @include tpl-button;
+        width: 100%;
+        max-width: 125px;
+        font-style: normal;
+        line-height: normal;
+        @include inline-block;
+    }
+
+    .gsc-control-cse .gsc-results-wrapper-nooverlay .gsc-above-wrapper-area {
+        margin: 0;
+        padding: 10px 0;
+    }
+    .gsc-control-cse .gsc-results-wrapper-nooverlay .gsc-above-wrapper-area .gsc-above-wrapper-area-container .gsc-result-info-container .gsc-result-info {
+        display: inline;
+        padding: 0;
+    }
+
+    .gsc-control-cse .gsc-results-wrapper-nooverlay .gsc-above-wrapper-area .gsc-above-wrapper-area-container .gsc-orderby-container .gsc-orderby .gsc-option-menu-container,
+    .gsc-control-cse .gsc-results-wrapper-nooverlay .gsc-above-wrapper-area .gsc-selected-option-container {
+        min-width: 62px;
+        background: none;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+    }
+    .gsc-control-cse .gsc-results-wrapper-nooverlay .gsc-above-wrapper-area .gsc-above-wrapper-area-container .gsc-orderby-container .gsc-orderby .gsc-option-menu-container .gsc-selected-option {
+        font-size: 12px;
+        padding: 0;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gcsc-branding {
+        display: none;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult {
+        border: none;
+        background: #fff;
+        margin: 35px 0;
+        padding: 0;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-snippet-close {
+        padding: 10px 20px 10px;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail {
+        padding: 0;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail a {
+        font-style: normal;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail .gs-web-image-box {
+        width: 220px;
+        float: none;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail .gs-web-image-box a .gs-image {
+        width: 100% !important;
+        height: auto;
+        border: none;
+        -webkit-box-shadow:  none;
+        box-shadow:  none;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gs-snippet,
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gs-title,
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-url-bottom {
+        font-family: $font-family;
+        color: #000;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gs-snippet {
+        font-size: 14px;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gs-title,
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gs-title b {
+        text-decoration: none;
+        font-size: 24px;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gs-title b {
+        color: $color-link;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gs-visibleUrl {
+        color: $color-link;
+    }
+
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-cursor-box {
+        border: none;
+        text-align: center;
+        margin: 20px 0 10px;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-cursor-box .gsc-cursor .gsc-cursor-page {
+        border: none;
+        background: none;
+        color: tpl-alt-color-opacity($color-black);
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 14px;
+        width: auto;
+        padding: 0 2px;
+        margin: 5px 6px;
+    }
+    .gsc-control-cse .gsc-wrapper .gsc-results .gsc-cursor-box .gsc-cursor .gsc-cursor-page.gsc-cursor-current-page {
+        background: none;
+        border: none;
+        color: tpl-alt-color-opacity($color-black);
+        border-bottom: 3px solid $color-blue;
+    }
+}
+
+@media (max-width: 990px) {
+    .google-modules-google-search {
+        .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail {
+            width: 31%;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .google-modules-google-search {
+        .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-snippet-close {
+            padding: 20px 20px 25px;
+        }
+        .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail {
+            width: auto;
+        }
+        .gsc-control-cse .gsc-wrapper .gsc-results .gsc-webResult .gs-webResult .gsc-table-result .gsc-table-cell-thumbnail .gs-web-image-box {
+            display: none;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .google-modules-google-search {
+        form.custom-search-form .search-input-wrapper {
+            padding-right: 105px;
+        }
+        form.custom-search-form .search-button {
+            max-width: 100px;
+        }
+    }
+}

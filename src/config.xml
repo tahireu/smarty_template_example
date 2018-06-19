@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<template>
+
+    <index alias="index" name="Index" />
+    <index alias="pdf" name="PDF" />
+
+	<position alias="load_scripts" name="Load Scripts"/>
+    <position alias="flyout" name="Flyout"/> 
+    <position alias="header_left" name="Header - Left" /> 
+    <position alias="header_right" name="Header - Right" /> 
+    <position alias="shopping_cart" name="Shopping Cart" /> 
+    <position alias="user_drop_content" name="User Drop Content" />
+	<position alias="body" name="Body (full width - 100%)"/>
+    <position alias="footer" name="Footer"/>
+    <position alias="footer_bottom" name="Footer - Bottom"/>
+
+    <position alias="body" name="Body (for PDF)" index="pdf"/>
+
+    <contentType plugin="Menus" alias="Menu">
+        <view alias="copyright_menu" name="Copyright Menu"/>
+        <view alias="social_menu" name="Social Menu"/>
+        <view alias="main_menu" name="Main Menu"/>
+    </contentType>
+
+    <contentType plugin="Architect" alias="Child">
+        <view alias="detail" name="Detail - Default"/>
+        <view alias="detail_gifts" name="Detail - Gifts"/>
+        <view alias="detail_shared" name="Detail - Shared"/>
+        <view alias="pdf_content" name="PDF Content" index="pdf"/>
+        <view alias="summary" name="Summary"/>
+    </contentType>
+    <contentType plugin="Architect" alias="ChildCompany" inherit="Child"/>
+
+    <contentType plugin="Architect" alias="Ministry">
+        <view alias="advocacy_review" name="Advocacy Review"/>
+        <view alias="advocacy_detail" name="Advocacy Detail"/>
+        <view alias="summary" name="Summary"/>
+        <view alias="detail" name="Detail"/>
+    </contentType>
+
+    <contentType plugin="Architect" alias="Opportunity">
+        <view alias="summary" name="Summary"/>
+        <view alias="detail" name="Detail"/>
+    </contentType>
+
+    <contentType plugin="Architect" alias="Person">
+        <view alias="detail" name="Detail"/>
+        <view alias="summary" name="Summary">
+            <class alias="remove-linking" name="Remove Linking"/>
+        </view>
+    </contentType>
+
+    <contentType plugin="Architect" alias="Project">
+        <view alias="advocacy_review" name="Advocacy Review"/>
+        <view alias="advocacy_detail" name="Advocacy Detail"/>
+        <view alias="detail" name="Detail"/>
+        <view alias="feature_give_block" name="Feature Give Block">
+            <class alias="tpl-align-left" name="Align Left"/>
+            <class alias="tpl-align-right" name="Align Right"/>
+            <class alias="no-summary" name="No Summary"/>
+            <class alias="no-bg-image" name="No Background Image"/>
+            <class alias="big-give-button" name="Big Give Button"/>
+            <class alias="tpl-use-only-subtitle" name="Use Only Subtitle"/>
+            <class alias="tpl-use-alternate-subtitle" name="Use Alternate Subtitle" />
+        </view>
+        <view alias="summary" name="Summary"/>
+    </contentType>
+
+	<contentType plugin="Architect" alias="Static">
+        <view alias="accordion" name="Accordion">
+            <class alias="tpl-background-color-red" name="Background Color - Red"/>
+            <class alias="tpl-background-color-blue" name="Background Color - Blue"/>
+            <class alias="tpl-background-color-sky-blue" name="Background Color - Sky Blue"/>
+            <class alias="tpl-background-color-green" name="Background Color - Green"/>
+            <class alias="tpl-background-color-white-dirty" name="Background Color - Dirty White"/>
+            <class alias="tpl-background-color-gray" name="Background Color - Gray"/>
+            <class alias="tpl-background-color-light-gray" name="Background Color - Light Gray"/>
+            <class alias="tpl-background-color-sand" name="Background Color - Sand"/>
+            <class alias="tpl-dark-text" name="Dark Text"/>
+        </view>
+        <view alias="basic_article" name="Basic Article">
+            <class alias="tpl-child-title-h1" name="Title - H1"/>
+            <class alias="tpl-child-title-h2" name="Title - H2"/>
+            <class alias="tpl-child-title-h3" name="Title - H3"/>
+            <class alias="tpl-child-title-h4" name="Title - H4"/>
+            <class alias="tpl-child-title-h5" name="Title - H5"/>
+            <class alias="tpl-child-title-h6" name="Title - H6"/>
+
+            <class alias="tpl-child-button-blue" name="Button - Blue"/>
+            <class alias="tpl-child-button-yellow" name="Button - Yellow"/>
+            <class alias="tpl-child-button-outline" name="Button - Outline"/>
+
+            <class alias="tpl-child-button-size-small" name="Button Size - Small"/>
+
+            <class alias="tpl-white-text" name="White Text"/>
+            <class alias="tpl-truncate-150" name="Body Truncate (150)"/>
+
+            <class alias="tpl-image-as-background" name="Image - As background"/>
+            <class alias="tpl-image-at-bottom" name="Image - At Bottom"/>
+            <class alias="tpl-image-right" name="Image - Right"/>
+            <class alias="tpl-image-hidden" name="Image - Hidden"/>
+            <class alias="tpl-image-rounded" name="Image - Rounded"/>
+
+            <class alias="tpl-body-font-size-larger" name="Font Size Larger - Body"/>
+            <class alias="tpl-summary-font-size-larger" name="Font Size Larger - Summary"/>
+
+            <class alias="tpl-vertical-summary" name="Vertical Summary"/>
+
+            <class alias="tpl-vertical-align-middle" name="Vertical Align - Middle"/>
+
+            <class alias="tpl-content-max-width-350" name="Content Max Width - 350px"/>
+            <class alias="tpl-content-max-width-500" name="Content Max Width - 500px"/>
+            <class alias="tpl-content-max-width-540" name="Content Max Width - 540px"/>
+
+            <class alias="tpl-image-padding-bottom" name="Image - Padding - Bottom"/>
+
+            <class alias="tpl-center-title" name="Center - Title"/>
+            <class alias="tpl-center-description" name="Center - Description"/>
+            <class alias="tpl-center-summary" name="Center - Summary"/>
+            <class alias="tpl-center-body" name="Center - Body"/>
+            <class alias="tpl-center-button" name="Center - Button"/>
+
+            <class alias="tpl-highlighted-body" name="Highlighted Body"/>
+            <class alias="tpl-highlighted-image" name="Highlighted Image"/>
+        </view>
+		<view alias="body_only" name="Body Only"/>
+		<view alias="hero" name="Hero">
+            <class alias="tpl-full-link" name="Full View Link"/>
+        </view>
+        <view alias="large_video" name="Large Video">
+            <class alias="tpl-play-video-in-shadowbox" name="Play video in shadowbox"/>
+            <class alias="tpl-content-above-video" name="Content Above Video"/>
+            <class alias="tpl-hide-play-icon" name="Hide play icon"/>
+            <class alias="tpl-aspect-ratio-16-9" name="Aspect Ratio - 16:9"/>
+            <class alias="tpl-child-title-h1" name="Title - H1"/>
+            <class alias="tpl-child-title-h2" name="Title - H2"/>
+            <class alias="tpl-child-title-h3" name="Title - H3"/>
+            <class alias="tpl-child-title-h4" name="Title - H4"/>
+            <class alias="tpl-child-title-h5" name="Title - H5"/>
+            <class alias="tpl-child-title-h6" name="Title - H6"/>
+        </view>
+        <view alias="title_only" name="Title Only">
+            <class alias="tpl-h1" name="H1" />
+            <class alias="tpl-h2" name="H2" />
+            <class alias="tpl-h3" name="H3" />
+            <class alias="tpl-h4" name="H4" />
+            <class alias="tpl-h5" name="H5" />
+            <class alias="tpl-h6" name="H6" />
+        </view>
+        <view alias="ask_a_question_bar" name="Ask A Question Bar">
+            <class alias="tpl-dark-text" name="Dark Text"/>
+        </view>
+        <view alias="video_thumbnail" name="Video Thumbnail">
+            <class alias="outline-button" name="Button Style Outline"/>
+            <class alias="small-button" name="Small Button"/>
+            <class alias="link-button" name="Link Button"/>
+            <class alias="hide-description" name="Hide Description"/>
+        </view>
+        <view alias="video_list" name="Video List"/>
+	</contentType>
+
+    <contentType plugin="Architect" alias="Story">
+        <view alias="summary" name="Summary"/>
+        <view alias="detail" name="Detail">
+            <class alias="tpl-quote-left" name="Quote on left side"/>
+        </view>
+    </contentType>
+
+	<contentType plugin="Architect" alias="Wrapper">
+        <view alias="basic" name="Basic">
+            <class alias="tpl-centered" name="Centered - 1000px"/>
+            <class alias="tpl-centered-1440" name="Centered - 1440px"/>
+            <class alias="tpl-centered-1220" name="Centered - 1220px"/>
+            <class alias="tpl-centered-1150" name="Centered - 1150px"/>
+            <class alias="tpl-centered-980" name="Centered - 980px"/>
+            <class alias="tpl-centered-960" name="Centered - 960px"/>
+            <class alias="tpl-centered-900" name="Centered - 900px"/>
+            <class alias="tpl-centered-850" name="Centered - 850px"/>
+            <class alias="tpl-centered-800" name="Centered - 800px"/>
+            <class alias="tpl-centered-770" name="Centered - 770px"/>
+            <class alias="tpl-centered-750" name="Centered - 750px"/>
+            <class alias="tpl-centered-730" name="Centered - 730px"/>
+            <class alias="tpl-centered-710" name="Centered - 710px"/>
+            <class alias="tpl-centered-650" name="Centered - 650px"/>
+            <class alias="tpl-centered-600" name="Centered - 600px"/>
+            <class alias="tpl-centered-560" name="Centered - 560px"/>
+            <class alias="tpl-centered-500" name="Centered - 500px"/>
+            <class alias="tpl-centered-400" name="Centered - 400px"/>
+
+            <class alias="tpl-centered-without-side-padding" name="Centered without side padding"/>
+
+            <class alias="tpl-col-1-2" name="1/2 Width Column"/>
+            <class alias="tpl-col-1-3" name="1/3 Width Column"/>
+            <class alias="tpl-col-2-3" name="2/3 Width Column"/>
+            <class alias="tpl-col-1-4" name="1/4 Width Column"/>
+            <class alias="tpl-col-2-4" name="2/4 Width Column"/>
+            <class alias="tpl-col-3-4" name="3/4 Width Column"/>
+
+            <class alias="text-align-center" name="Text Align - Center"/>
+
+            <class alias="hide-modify-button" name="Hide modify option on checkout page"/>
+
+            <class alias="border-top" name="Border - Top"/>
+            <class alias="border-bottom" name="Border - Bottom"/>
+            <class alias="border-left" name="Border - Left"/>
+            <class alias="border-right" name="Border - Right"/>
+            <class alias="border-x-5" name="Border Width x 5"/>
+            <class alias="border-light-gray" name="Border Light Gray"/>
+            <class alias="border-transparent" name="Border Transparent"/>
+            <class alias="border-white" name="Border White"/>
+
+            <class alias="tpl-background-color-orange" name="Background Color - Orange"/>
+            <class alias="tpl-background-color-gold" name="Background Color - Gold"/>
+            <class alias="tpl-background-color-teal" name="Background Color - Teal"/>
+            <class alias="tpl-background-color-blue" name="Background Color - Blue"/>
+            <class alias="tpl-background-color-sky-blue" name="Background Color - Sky Blue"/>
+            <class alias="tpl-background-color-green" name="Background Color - Green"/>
+            <class alias="tpl-background-color-light-blue" name="Background Color - Light Blue"/>
+            <class alias="tpl-background-color-purple" name="Background Color - Purple"/>
+            <class alias="tpl-background-color-taupe" name="Background Color - Taupe"/>
+            <class alias="tpl-background-color-light-taupe" name="Background Color - Light Taupe"/>
+            <class alias="tpl-background-color-red" name="Background Color - Red"/>
+            <class alias="tpl-background-color-aqua" name="Background Color - Aqua"/>
+            <class alias="tpl-background-color-light-aqua" name="Background Color - Light Aqua"/>
+            <class alias="tpl-background-color-dark" name="Background Color - Dark"/>
+            <class alias="tpl-background-color-gray" name="Background Color - Gray"/>
+            <class alias="tpl-background-color-light-gray" name="Background Color - Light Gray"/>
+            <class alias="tpl-background-color-light-gray-yellow" name="Background Color - Light Gray Yellow"/>
+            <class alias="tpl-background-color-sand" name="Background Color - Sand"/>
+
+            <class alias="overlap-left" name="Overlap Left"/>
+            <class alias="overlap-right" name="Overlap Right"/>
+            <class alias="overlap-top" name="Overlap Top"/>
+            <class alias="overlap-bottom" name="Overlap Bottom"/>
+            <class alias="overlap-small" name="Overlap Small (10px)"/>
+            <class alias="overlap-medium" name="Overlap Medium (25px)"/>
+            <class alias="overlap-big" name="Overlap Big (50px)"/>
+
+            <class alias="padding-top" name="Padding - Top"/>
+            <class alias="padding-right" name="Padding - Right"/>
+            <class alias="padding-bottom" name="Padding - Bottom"/>
+            <class alias="padding-left" name="Padding - Left"/>
+            <class alias="padding-sides" name="Padding - Sides"/>
+
+            <class alias="padding-x-1-5" name="Padding x 1.5"/>
+            <class alias="padding-x-2-5" name="Padding x 2.5"/>
+            <class alias="padding-x-2" name="Padding x 2"/>
+            <class alias="padding-x-3" name="Padding x 3"/>
+            <class alias="padding-x-4" name="Padding x 4"/>
+            <class alias="padding-x-5" name="Padding x 5"/>
+            <class alias="padding-x-6" name="Padding x 6"/>
+            <class alias="padding-x-8" name="Padding x 8"/>
+            <class alias="padding-x-10" name="Padding x 10"/>
+
+            <class alias="padding-h-x-1-5" name="Padding Horizontal x 1.5"/>
+            <class alias="padding-h-x-2-5" name="Padding Horizontal x 2.5"/>
+            <class alias="padding-h-x-2" name="Padding Horizontal x 2"/>
+            <class alias="padding-h-x-3" name="Padding Horizontal x 3"/>
+            <class alias="padding-h-x-4" name="Padding Horizontal x 4"/>
+            <class alias="padding-h-x-5" name="Padding Horizontal x 5"/>
+            <class alias="padding-h-x-6" name="Padding Horizontal x 6"/>
+            <class alias="padding-h-x-8" name="Padding Horizontal x 8"/>
+            <class alias="padding-h-x-10" name="Padding Horizontal x 10"/>
+
+            <class alias="padding-v-x-1-5" name="Padding Vertical x 1.5"/>
+            <class alias="padding-v-x-2-5" name="Padding Vertical x 2.5"/>
+            <class alias="padding-v-x-2" name="Padding Vertical x 2"/>
+            <class alias="padding-v-x-3" name="Padding Vertical x 3"/>
+            <class alias="padding-v-x-4" name="Padding Vertical x 4"/>
+            <class alias="padding-v-x-5" name="Padding Vertical x 5"/>
+            <class alias="padding-v-x-6" name="Padding Vertical x 6"/>
+            <class alias="padding-v-x-8" name="Padding Vertical x 8"/>
+            <class alias="padding-v-x-10" name="Padding Vertical x 10"/>
+
+            <class alias="style-border-top-and-bottom" name="Style Border Top and Bottom" />
+
+            <class alias="fixed-height-450" name="Fixed Height (450px)"/>
+            <class alias="fixed-height-380" name="Fixed Height (380px)"/>
+            <class alias="fixed-height-350" name="Fixed Height (350px)"/>
+            <class alias="fixed-height-250" name="Fixed Height (250px)"/>
+            <class alias="button-style-outline" name="Button Style Outline"/>
+
+            <class alias="hide-motion-form-title" name="Hide Motion Form Title"/>
+
+            <class alias="align-right" name="Align Right" />
+            <class alias="align-left" name="Align Left" />
+        </view>
+	</contentType>
+
+    <contentType plugin="Components" alias="Page">
+        <view alias="basic" name="Basic"/>
+    </contentType>
+
+    <contentType plugin="Modules" alias="Module">
+        <view alias="default" name="Default"/>
+    </contentType>
+</template>

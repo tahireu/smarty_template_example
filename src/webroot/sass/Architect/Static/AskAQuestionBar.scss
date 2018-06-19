@@ -1,0 +1,27 @@
+@import "../../variables";
+
+a.tpl-architect-static-ask-a-question-bar {
+	display: block;
+	padding: 15px $default-content-padding-sides;
+	text-align: center;
+	font-style: normal;
+	
+	&:hover {
+		text-decoration: none;
+	}
+    
+    img {
+        vertical-align: middle;
+        padding-right: 10px;
+    }
+	
+    .tpl-title {
+        vertical-align: middle;
+		display: inline;
+		color: $color-white;
+	}
+
+	&.tpl-dark-text .tpl-title {
+		color: $color-dark;
+	}
+}
